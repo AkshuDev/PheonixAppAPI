@@ -1,7 +1,7 @@
 import os
 import sys
 
-from pheonixapp.files import (PSSbridge)
+from PheonixAppAPI.pheonixapp.files import (PSSbridge)
 
 PATF = PSSbridge.API(True)
 
