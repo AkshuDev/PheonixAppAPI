@@ -1,5 +1,5 @@
 import os
-from pheonixapp.files import PSSbridge
+from PheonixAppAPI.pheonixapp.files import PSSbridge
 
 PSSbridge.API().CheckModules()
 
