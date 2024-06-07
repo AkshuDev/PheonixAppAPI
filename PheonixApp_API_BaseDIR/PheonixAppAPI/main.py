@@ -1,5 +1,5 @@
 import os
-from pheonixapp.files import PSSbridge
+from PheonixAppAPI.pheonixapp.files import PSSbridge
 
 class INITIALIZE:
     def __init__(self, LoginOrSignup:bool=False, email:str="", username:str="", password:str=""):
