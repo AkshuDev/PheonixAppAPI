@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PheonixAppAPI"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Pheonix Studios", email="pheonix.community.mail@gmail.com" },
   { name="Akshobhya Sasun", email="akshobhyasasun@gmail.com" },
@@ -19,8 +19,6 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "os",
-    "sys",
     "PyQt5"
 ]
 
