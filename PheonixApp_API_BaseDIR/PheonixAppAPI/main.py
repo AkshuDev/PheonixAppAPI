@@ -6,9 +6,15 @@ class PheonixAppAPI:
         self.Api = None
 
         if LoginOrSignup:
-            self.Api = PSSbridge.API(True, False, email, username, password)
+            if os.path.exists(os.path.join(os.path.dirname(__file__), "pheonixapp", "files", "PATFsettings.patf")):
+                self.Api = PSSbridge.API(True, False, email, username, password, True)
+            else:
+                self.Api = PSSbridge.API(True, False, email, username, password)
         else:
-            self.Api = PSSbridge.API(False, False, email, username, password)
+            if os.path.exists(os.path.join(os.path.dirname(__file__), "pheonixapp", "files", "PATFsettings.patf")):
+                self.Api = PSSbridge.API(False, False, email, username, password, True)
+            else:
+                self.Api = PSSbridge.API(True, False, email, username, password)
 
     def initialize(self) -> object:
         return self.Api
