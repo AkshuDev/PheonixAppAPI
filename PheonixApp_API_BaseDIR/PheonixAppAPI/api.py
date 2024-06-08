@@ -126,9 +126,9 @@ class Encoder():
         2. 'Pheonix_utx' Encodes only some lowercase letters, numbers and symbols
         3. 'Pheonixntx_H1' Encodes only lowercase letters
     """
-    def __init__(self, msg:str="", type:str="Hype_Space") -> None:
-        self.msg
-        self.type_
+    def __init__(self, msg:str="", type_:str="Hype_Space") -> None:
+        self.msg = msg
+        self.type_ = type_
 
     def Encode(self) -> str:
         """
