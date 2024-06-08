@@ -106,95 +106,84 @@ PheonixAppAPI
 
 To start import the files -> (api.py, main.py)
 
-Then do -> main.INITIALIZE(LoginOrSignup:bool=False, email:str="", username:str="", password:str="")
+# Example Usage
 
-First argument is LoginOrSignup, If you want to signup and use it then make it True else False
-Other arguments are your login arguments
+from PheonixAppAPI import (api, main)
 
-api File
 
+Then do main.PheonixAppAPI.initialize(). Here is the arguments it takes -> main.PheonixAppAPI(LoginOrSignup:bool=False, email:str="", username:str="", password:str="")
+
+LoginOrSignup: Set to True if you want to sign up and use the application, otherwise set to False.
+email: Your email address. Leave blank if not logging in or signing up.
+username: Your username. Leave blank if not logging in or signing up.
+password: Your password. Leave blank if not logging in or signing up.
+
+# Example Usage
+
+parent_ = main.PheonixAppAPI(False).initialize()
+
+Now, you need to set the parent in the api file.
+
+# Example Usage
+
+api.set_parent(parent_)
+
+
+API Usage
 Initialization
-Create an instance of the PATF_API class:
+To start using the API, create an instance of the PATF_API class from api.py:
 
-from pheonixapp.files import PSSbridge
+PATF_API = api.PATF_API(True)
 
-PATF = PSSbridge.API(True)
 
-class PATF_API():
-    def __init__(self, useFileData:bool=False, email:str="", username:str="", password:str="") -> None:
-        self.useFileData = useFileData
-        self.email = email
-        self.username = username
-        self.password = password
-        self.patf = PSSbridge.API(useFileData, email, username, password)
+Checking Modules
+You can check for the existence of certain modules using the CheckModules method:
+
+# Example Usage
+
+PATF_API = api.PATF_API(True)
+PATF_API.CheckModules("list", ["PyQt5", "PheonixAppAPI"])
+
 
 GUI Mode
 To start the GUI mode, use the GUI class:
 
-class GUI():
-    def __init__(self) -> None:
-        pass
+# Example Usage
 
-    def start(self) -> None:
-        PATF.run("gui start")
-
-# Example usage
-gui = GUI()
+gui = api.GUI()
 gui.start()
 Mini-Games
+PheonixAppAPI includes a variety of mini-games. Use the MiniGames class to access them:
 
-To play the "Guess The Number" mini-game, use the MiniGames class:
+# Example Usage
 
-class MiniGames():
-    def __init__(self) -> None:
-        pass
-
-    def GuessTheNumber(self) -> None:
-        PATF.run("fun !minigame guessthenumber")
-
-# Example usage
 games = MiniGames()
 games.GuessTheNumber()
 
 
 PATF Commands
-Use the PATF_API class to manage the PATF file and perform other related tasks:
-
-class PATF_API():
-    def __init__(self, useFileData:bool=False, email:str="", username:str="", password:str="") -> None:
-        self.useFileData = useFileData
-        self.email = email
-        self.username = username
-        self.password = password
-        self.patf = PSSbridge.API(useFileData, email, username, password)
-
-    def run(self, cmd:str="terminal --createfile") -> None:
-        self.patf.run(cmd)
-
-    def CheckModules(self, mode:str="all", list:list=[], module:str="") -> None:
-        self.patf.CheckModules(mode, list, module)
-
-    def createfile(self, flag:str=""):
-        self.patf.createfile(flag)
-
-    def getCertificatePath(self, code:str="", flag:str="+BOOL"):
-        return self.patf.getCertificatePath(code, flag)
-
-
-Examples ->
-
 Creating a PATF File
+Use the PATF_API class to manage PATF files and perform related tasks. To create a PATF file, use the following command:
+
+# Example Usage
 
 patf_api = PATF_API()
 patf_api.run("terminal --createfile")
 
+
 Checking Modules
+Check the status of modules with the CheckModules method:
+
+# Example Usage
 
 patf_api = PATF_API()
 patf_api.CheckModules(mode="all", list=["module1", "module2"])
 
 
-Getting Certificate path
+Getting Certificate Path
+Retrieve the certificate path using the getCertificatePath method. Note that the code argument is an internally used argument and requires specific knowledge to user:
+
+# Example Usage
 
 patf_api = PATF_API()
 path = patf_api.getCertificatePath(code="12345", flag="+BOOL")
