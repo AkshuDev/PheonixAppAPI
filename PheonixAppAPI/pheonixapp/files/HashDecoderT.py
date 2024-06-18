@@ -53,6 +53,10 @@ class CODE:
                 return "hype_space"
             elif "#CODEhypeSPACE#" in self.hash and flag == "":
                 return True, self.hash.replace("#CODEhypeSPACE#", '')
+            elif "CODEhypeSPACEbin#" in self.hash and flag == "CODE@HashDecoder":
+                return "hype_space_bin"
+            elif "#CODEhypeSPACEbin#" in self.hash and flag == "":
+                return True, self.hash.replace("#CODEhypeSPACEbin#", '')
 
     def get_hash_type(self):
         hashTypeSTR = self.PS_CODE("CODE@HashDecoder")
@@ -72,6 +76,8 @@ class Decode:
                 return self.decode_pheonix_utx()
             elif type.lower() == "hype_space":
                 return self.decode_Hype_Space()
+            elif type.lower() == "hype_space_bin":
+                return self.decode_Hype_Space_BIN()
         else:
             type = CODE(self.msg).get_hash_type()
             if type == "PSntx_H1" or type.lower() == "psntx_h1":
@@ -80,6 +86,8 @@ class Decode:
                 return self.decode_pheonix_utx()
             elif type.lower() == "hype_space":
                 return self.decode_Hype_Space()
+            elif type.lower() == "hype_space_bin":
+                return self.decode_Hype_Space_BIN()
 
     def decode_PSntx_H1(self):
         hashTF, newHash = CODE(self.msg).PS_CODE()
@@ -128,7 +136,21 @@ class Decode:
                         decoded_str += k
             return decoded_str
         else:
-            raise Exception("No Code, Failed. [Hash Type]-[Pheonix Studios Hash]"+f"\n[Pheonix Studios Hash] [Type-PSntx_H1] Description - {libH.hype_space_DESC}")
+            raise Exception("No Code, Failed. [Hash Type]-[Pheonix Studios Hash]"+f"\n[Pheonix Studios Hash] [Type-Hype_Space] Description - {libH.hype_space_DESC}")
+
+    def decode_Hype_Space_BIN(self):
+        hashTF, newHash = CODE(self.msg).PS_CODE()
+        dict_ = libH.hype_space_bin
+        decoded_str = ""
+        if hashTF:
+            self.msg = newHash
+            for char in self.msg:
+                for k, v in dict_.items():
+                    if v == char:
+                        decoded_str += k
+            return decoded_str
+        else:
+            raise Exception("No Code, Failed. [Hash Type]-[Pheonix Studios Hash]"+f"\n[Pheonix Studios Hash] [Type-Hype_Space_BIN] Description - {libH.hype_space_bin_DESC}")
 
 class Encode:
     def __init__(self, msg:str, type:str, ComponentType:str) -> None:
@@ -154,6 +176,9 @@ class Encode:
             elif type.lower() == "hype_space":
                 msg = self.add_code(self.encode_Hype_Space())
                 return msg
+            elif type.lower() == "hype_space_bin":
+                msg = self.add_code(self.encode_Hype_Space_BIN())
+                return msg
         else:
             raise Exception("No Type found. [Encoder]")
 
@@ -166,6 +191,9 @@ class Encode:
             return msg
         elif self.type.lower() == "hype_space":
             msg = '$AOSCODEhypeSPACE$AOS' + msg
+            return msg
+        elif self.type.lower() == "hype_space_bin":
+            msg = '$AOSCODEhypeSPACEbin$AOS' + msg
             return msg
 
     def encode_PSntx_H1(self):
@@ -207,4 +235,16 @@ class Encode:
                         encoded_str += v
             return encoded_str
         else:
-            raise Exception("No Message, Failed. [Hash Type]-[Pheonix Studios Hash]"+f"\n[Pheonix Studios Hash] [Type-PSntx_H1] Description - {libH.hype_space_DESC}")
+            raise Exception("No Message, Failed. [Hash Type]-[Pheonix Studios Hash]"+f"\n[Pheonix Studios Hash] [Type-Hype_Space] Description - {libH.hype_space_DESC}")
+
+    def encode_Hype_Space_BIN(self):
+        dict_ = libH.hype_space_bin
+        encoded_str = ""
+        if self.msg:
+            for char in self.msg:
+                for k, v in dict_.items():
+                    if k == char:
+                        encoded_str += v
+            return encoded_str
+        else:
+            raise Exception("No Message, Failed. [Hash Type]-[Pheonix Studios Hash]"+f"\n[Pheonix Studios Hash] [Type-Hype_Space_BIN] Description - {libH.hype_space_bin_DESC}")
