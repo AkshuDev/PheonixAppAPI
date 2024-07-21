@@ -97,7 +97,7 @@ class TCmds():
                                 command = True
                                 print(datetime.now())
                             elif v.lower() == "!hash":
-                                os.system(f"py {os.path.join(os.path.dirname(os.path.abspath(__file__)), "HashDecoder.py")}")
+                                os.system(f"py {os.path.join(os.path.dirname(os.path.abspath(__file__)), 'HashDecoder.py')}")
                             elif v.lower() == "!fact":
                                 command = True
                                 response = None
