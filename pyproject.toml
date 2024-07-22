@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PheonixAppAPI"
-version = "0.0.8.1"
+version = "0.0.9"
 authors = [
   { name="Pheonix Studios", email="pheonix.community.mail@gmail.com" },
   { name="Akshobhya Sasun", email="akshobhyasasun@gmail.com" },
@@ -19,7 +19,21 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "PyQt5"
+    "PyQt5",
+    "wikipedia",
+    "pickle",
+    "configparser",
+    "xlsxwriter",
+    "requests",
+    "http",
+    "socket",
+    "qdarkstyle",
+    "ctypes",
+    "validate_email",
+    "opencv-python",
+    "zlib",
+    "pyttsx3",
+    "speech_recognition"
 ]
 
 [project.urls]
