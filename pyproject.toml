@@ -21,7 +21,6 @@ classifiers = [
 dependencies = [
     "PyQt5",
     "wikipedia",
-    "pickle",
     "configparser",
     "xlsxwriter",
     "requests",
