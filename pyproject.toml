@@ -26,7 +26,6 @@ dependencies = [
     "qdarkstyle",
     "validate_email",
     "opencv-python",
-    "zlib",
     "pyttsx3",
     "speech_recognition"
 ]
