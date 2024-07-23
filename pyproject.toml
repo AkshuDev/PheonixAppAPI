@@ -27,7 +27,7 @@ dependencies = [
     "validate_email",
     "opencv-python",
     "pyttsx3",
-    "speech_recognition"
+    "SpeechRecognition"
 ]
 
 [project.urls]
