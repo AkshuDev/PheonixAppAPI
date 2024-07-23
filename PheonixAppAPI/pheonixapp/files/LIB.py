@@ -153,7 +153,7 @@ class PSS:
 
     modules = ["os", "shutil", "time", "pathlib", "datetime", "pickle", "importlib", "configparser", "binascii", "random", "subprocess",
                "xlsxwriter", "requests", "json", "http", "socket", "PyQt5", "qdarkstyle", "ctypes", "validate_email", "opencv-python",
-               "pyttsx3", "speech_recognition", "zlib"]
+               "pyttsx3", "SpeechRecognition", "zlib"]
     modes_CM = ["all", "list", "module", "math", "wikipedia"]
 
     attribs_settingshandler = ["--createfile", "--deletefile", "--getfile"]
