@@ -1,19 +1,12 @@
- __________.__                        .__           _________ __            .___.__
- \______   \  |__   ____  ____   ____ |__|__  ___  /   _____//  |_ __ __  __| _/|__| ____  ______
-  |     ___/  |  \_/ __ \/  _ \ /    \|  \  \/  /  \_____  \\   __\  |  \/ __ | |  |/  _ \/  ___/
-  |    |   |   Y  \  ___(  <_> )   |  \  |>    <   /        \|  | |  |  / /_/ | |  (  <_> )___ \
-  |____|   |___|  /\___  >____/|___|  /__/__/\_ \ /_______  /|__| |____/\____ | |__|\____/____  >
-                \/     \/           \/         \/         \/                 \/               \/
-
-Pheonix App 1.0
+# Pheonix App 1.0
 
 
-Overview
+# Overview
 
 
 Pheonix App 1.0 is a powerful Python application designed to streamline various tasks, from managing files to playing mini-games. This README provides comprehensive instructions on how to use the app effectively.
 
-Getting
+# Getting
 
 To start the app, follow these steps:
 
@@ -21,243 +14,248 @@ Open PheonixStudiosStarter.py.
 Run the script in your terminal.
 Upon execution, the terminal will prompt you with a command line, starting with your current directory path.
 
-Usage
+# Usage
 
-GUI Mode
+# GUI Mode
 To switch to GUI mode, use the following command:
 
 
 
-gui start
+'gui start'
 
 
-Mini-Games
+# Mini-Games
 To play a mini-game, use the following command format:
 
 
 
-fun !minigame [minigame_name]
+'fun !minigame [minigame_name]'
 
 
-Replace [minigame_name] with the name of the mini-game you want to play.
+Replace '[minigame_name]' with the name of the mini-game you want to play.
 
-Terminal Mode
+# Terminal Mode
 
 
 For terminal mode, use the same command format as displayed when starting the app:
 
 
 
-C:/Users/main/mydir/pheonixapp1.0/files ->
+'''C:/Users/main/mydir/pheonixapp1.0/files ->'''
 
 
-Devtools
+# Devtools
 To enable or disable devtools, use the following commands:
 
 
 
-terminal !devtools:ENABLE
+'terminal !devtools:ENABLE'
 
 
-terminal !devtools:DISABLE
+'terminal !devtools:DISABLE'
 
 
-Release Mode
+# Release Mode
 
 
 To enable or disable release mode, use the following command:
 
 
 
-terminal !devtools:CLcmds:T:release
+'terminal !devtools:CLcmds:T:release'
 
 
-PATF File Commands
+# PATF File Commands
 
 
 To work with the PATF (Pheonix App Terminal File) file, use the following commands:
 
 
-terminal --createfile: Creates a fresh PATF file with information from the old one.
-terminal --deletefile: Deletes the PATF file (shuts down the app as the file is required to work).
-terminal --modifyfile: Modifies the PATF file.
-terminal --upgradefile: Upgrades PATF file information and then creates the file.
-terminal --changefiletype:(file_type): Changes the file type. Available file types are patf, txt, and ini.
-terminal !clear: Clears the terminal screen.
-terminal !color:(color_number): Changes the color of text in the terminal. Use DEFAULT to revert to default color.
-terminal !utilities:(utility_name): Starts the utilities function. Available utilities are calc and wiki.
+'terminal --createfile': Creates a fresh PATF file with information from the old one.
+
+'terminal --deletefile': Deletes the PATF file (shuts down the app as the file is required to work).
+
+'terminal --modifyfile': Modifies the PATF file.
+
+'terminal --upgradefile': Upgrades PATF file information and then creates the file.
+
+'terminal --changefiletype':(file_type): Changes the file type. Available file types are patf, txt, and ini.
+
+'terminal !clear': Clears the terminal screen.
+
+'terminal !color:(color_number)': Changes the color of text in the terminal. Use DEFAULT to revert to default color.
+
+'terminal !utilities':(utility_name): Starts the utilities function. Available utilities are calc and wiki.
 
 
-Utilities
+# Utilities
 
 
 Utilities calc: Starts a calculator.
 Utilities wiki: Performs a Wikipedia search.
 
 
-Installation
+# Installation
 
-To install the required modules or dependencies, run PheonixStudiosStarter.py. The script will automatically install necessary packages. Additionally, Pheonix App can be installed via PACI (Pheonix App Community Installer) software or downloaded at [https://pheonixntx.wixsite.com/paos/blank](Pheonix Studios AOS Site).
+To install the required modules or dependencies, run PheonixStudiosStarter.py. The script will automatically install necessary packages. Additionally, Pheonix App can be installed via PACI (Pheonix App Community Installer) software or downloaded at '[https://pheonixntx.wixsite.com/paos/blank](Pheonix Studios AOS Site)'.
 
-To install this module just use this command -> pip install PheonixappAPI
+To install this module just use this command -> 'pip install PheonixappAPI'
 
 
-PheonixAppAPI
+## PheonixAppAPI
 
-To start import the files -> (api.py, main.py)
+To start import the files -> '(api.py, main.py)'
 
-Then do -> main.INITIALIZE(LoginOrSignup:bool=False, email:str="", username:str="", password:str="")
+Then do -> 'main.INITIALIZE(LoginOrSignup:bool=False, email:str="", username:str="", password:str="")'
 
 First argument is LoginOrSignup, If you want to signup and use it then make it True else False
 Other arguments are your login arguments
 
-api File
+# api File
 
-Initialization
-Create an instance of the PATF_API class:
+# Initialization
+Create an instance of the PheonixAppAPI class:
 
-from pheonixapp.files import PSSbridge
+'''from PheonixAppAPI import *
+from PheonixAppAPI.api import *
 
-PATF = PSSbridge.API(True)
+main_ = main.PheonixAppAPI(False).initialize()
 
-class PATF_API():
-    def __init__(self, useFileData:bool=False, email:str="", username:str="", password:str="") -> None:
-        self.useFileData = useFileData
-        self.email = email
-        self.username = username
-        self.password = password
-        self.patf = PSSbridge.API(useFileData, email, username, password)
+set_parent(main_) '''
 
-GUI Mode
+# GUI Mode
 To start the GUI mode, use the GUI class:
 
-class GUI():
+'''class GUI():
     def __init__(self) -> None:
         pass
 
     def start(self) -> None:
-        PATF.run("gui start")
+        PATF.run("gui start")'''
 
 # Example usage
-gui = GUI()
-gui.start()
-Mini-Games
+'''gui = GUI()
+gui.start()'''
+
+# Mini-Games
 
 To play the "Guess The Number" mini-game, use the MiniGames class:
 
-class MiniGames():
+'''class MiniGames():
     def __init__(self) -> None:
         pass
 
     def GuessTheNumber(self) -> None:
-        PATF.run("fun !minigame guessthenumber")
+        PATF.run("fun !minigame guessthenumber")'''
 
 # Example usage
-games = MiniGames()
-games.GuessTheNumber()
+'''games = MiniGames()
+games.GuessTheNumber()'''
 
 
-PATF Commands
+# PATF Commands
 Use the PATF_API class to manage the PATF file and perform other related tasks:
 
-Examples ->
+# Examples ->
 
 Creating a PATF File
 
 # Example Usage
 
-patf_api = PATF_API()
-patf_api.run("terminal --createfile")
+'''patf_api = PATF_API()
+patf_api.run("terminal --createfile")'''
 
-Checking Modules
-
-# Example Usage
-
-patf_api = PATF_API()
-patf_api.CheckModules(mode="all", list=["module1", "module2"])
-
-
-Getting Certificate path
+# Checking Modules
 
 # Example Usage
 
-patf_api = PATF_API()
+'''patf_api = PATF_API()
+patf_api.CheckModules(mode="all", list=["module1", "module2"])'''
+
+
+# Getting Certificate path
+
+# Example Usage
+
+'''patf_api = PATF_API()
 path = patf_api.getCertificatePath(code="12345", flag="+BOOL")
-print(path)
+print(path)'''
 
-Encoding and Decoding Messages
+# Encoding and Decoding Messages
 
-Encoding
+# Encoding
 
 # Example Usage
 
-encoder = Encoder(msg="YourMessage", type="Hype_Space")
+'''encoder = Encoder(msg="YourMessage", type="Hype_Space")
 encoded_message = encoder.Encode()
-print(encoded_message)
+print(encoded_message)'''
 
 
-Decoding
+# Decoding
 
 # Example Usage
 
-decoder = Decoder(msg="EncodedMessage", type_="Hype_Space")
+'''decoder = Decoder(msg="EncodedMessage", type_="Hype_Space")
 decoded_message = decoder.Decode()
-print(decoded_message)
+print(decoded_message)'''
 
 
-Utilities
+# Utilities
 
-Calculator
-
-# Example Usage
-
-utils = Utilities()
-utils.Calc_Terminal()
-Wikipedia Search
-
-
-utils.Wiki_Terminal()
-
-
-Error Handling
+# Calculator
 
 # Example Usage
 
-try:
+'''utils = Utilities()
+utils.Calc_Terminal()'''
+
+# Wikipedia Search
+
+
+'utils.Wiki_Terminal()'
+
+
+# Error Handling
+
+# Example Usage
+
+'''try:
     # Your code that may raise an exception
     pass
 except Exception as e:
-    Error(type_=e, name="ErrorName", details="Error details", log=False, mode="")
+    Error(type_=e, name="ErrorName", details="Error details", log=False, mode="")'''
 
 
-Extra Commands
-
-# Example Usage
-
-extra_cmd = Extra_Commands(cmd="your_command")
-extra_cmd.Terminal_run()
-Extra Functions
+# Extra Commands
 
 # Example Usage
 
-extra = Extra()
+'''extra_cmd = Extra_Commands(cmd="your_command")
+extra_cmd.Terminal_run()'''
+
+# Extra Functions
+
+# Example Usage
+
+'''extra = Extra()
 extra.Object_Detector()
-extra.HaCline()
+extra.HaCline()'''
 
-Maps
+# Maps
 
 Maps can be used for adding your own encryption language to PheonixAppAPI by a map (a dictionary with with keys as letters and values as the encryption of the letters)
 
 # Example Usage
 
-my_new_map = api.create_map()
+'''my_new_map = api.create_map()
 api.push_map("My New Map", my_new_map)
 my_map = api.get_map("My New Map")
-api.remove_maps("one", ["My New Map"])
+api.remove_maps("one", ["My New Map"])'''
 
-Functions ->
+# Functions
 
-create_map ->
+# create_map
 
     Creates a dictionary where each key is a character and each value is a unique, randomly assigned character.
 
@@ -267,7 +265,7 @@ create_map ->
     Returns:
     dict: A dictionary mapping each character to a unique, random character.
 
-push_map ->
+# push_map
 
     Writes the map to an encrypted file. Creates the file if it does not exist.
 
@@ -278,7 +276,7 @@ push_map ->
     Returns:
     None: Nothing.
 
-get_map ->
+# get_map
 
     Retrieves and decrypts the map from the encrypted file.
 
@@ -292,7 +290,7 @@ get_map ->
     Raises:
     Exception: If the map file does not exist.
 
-remove_maps ->
+# remove_maps
 
     A function to remove maps from the file.
 
@@ -312,15 +310,14 @@ remove_maps ->
     Returns:
     None: Nothing.
 
-Binary Workings
+# Binary Workings
 
 How to work with binary using PheonixAppAPI
 
 Bin functions can be used as well as from api.py and from retrieving the BIN class using [api.BIN(ARGS....)]. The BIN class does have more functions than the ones present in api.py hence, it is recommended to use BIN class instead of api.py functions.
 
 # Example Usage
-
-bin = api.BIN(path="test.bin", content="Hello")
+'''bin = api.BIN(path="test.bin", content="Hello")
 print(bin.str_to_bin("Hello world"))
 print(bin.bin_to_str(bin.str_to_bin("Hello world")))
 print(bin.to_binINT("Hello world"))
@@ -328,11 +325,11 @@ print(bin.str_to_bytes("Hello world", "utf-16"))
 print(bin.bytes_to_str(bin.str_to_bytes("Hello world", "utf-16"), "utf-16"))
 
 bin.push_str()
-data = bin.get_str()
+data = bin.get_str()'''
 
-Functions ->
+# Functions
 
-str_to_bin ->
+# str_to_bin
 
     Convert a string, integer, or dictionary to its binary string representation.
 
@@ -342,7 +339,7 @@ str_to_bin ->
     Returns:
     str: The binary string representation of the input data.
 
-bin_to_str ->
+# bin_to_str
 
     Convert a binary string back to its original string representation.
 
@@ -352,7 +349,7 @@ bin_to_str ->
     Returns:
     str: The original string representation of the binary input.
 
-to_binINT ->
+# to_binINT ->
 
     Convert a dictionary or string to a binary integer.
 
@@ -364,7 +361,7 @@ to_binINT ->
     Returns:
     int: The binary integer representation of the input data.
 
-str_to_bytes ->
+# str_to_bytes ->
 
     Convert a string, integer, or dictionary to its byte representation.
 
@@ -375,7 +372,7 @@ str_to_bytes ->
     Returns:
     bytes: The byte representation of the input data.
 
-bytes_to_str ->
+# bytes_to_str ->
 
     Convert bytes back to a string using the specified encoding.
 
@@ -386,7 +383,7 @@ bytes_to_str ->
     Returns:
     str: The string representation of the byte input.
 
-api.BIN ->
+# api.BIN ->
 
     Returns the BIN class of bin_worker.py for working with binary.
 
@@ -406,5 +403,5 @@ api.BIN ->
     Returns:
         bin_worker.BIN: The class for working with binary
 
-Support
+## Support
 For any assistance or inquiries, please contact the Pheonix Studios at [pheonix.community.mail@gmail.com]
