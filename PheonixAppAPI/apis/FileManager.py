@@ -102,14 +102,14 @@ class Large_File_Management_System():
         """
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -181,14 +181,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -214,14 +214,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -277,14 +277,15 @@ class Large_File_Management_System():
             data:list = []
 
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
+                    index_to = index_from
 
-            index_to = indexes[1]
             data = ""
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -332,14 +333,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -385,14 +386,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -439,14 +440,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -484,14 +485,14 @@ class Large_File_Management_System():
         """
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -529,14 +530,14 @@ class Large_File_Management_System():
         """
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -582,14 +583,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -627,14 +628,14 @@ class Large_File_Management_System():
         """
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -672,14 +673,14 @@ class Large_File_Management_System():
         """
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -721,14 +722,14 @@ class Large_File_Management_System():
         """
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -778,14 +779,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -837,14 +838,14 @@ class Large_File_Management_System():
 
         try:
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
-
-            index_to = indexes[1]
+                    index_to = index_from
 
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -899,14 +900,15 @@ class Large_File_Management_System():
             data:list = []
 
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
+                    index_to = index_from
 
-            index_to = indexes[1]
             data = ""
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
@@ -962,14 +964,15 @@ class Large_File_Management_System():
             data:list = []
 
             index_from = indexes[0]
-            if indexes[1].isalpha():
-                if indexes[1].lower() == "max":
-                    indexes[1] = len(self.path)
+            index_to = indexes[1]
+
+            if index_to.isalpha():
+                if index_to.lower() == "max":
+                    index_to = len(self.path)
                 else:
                     print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
-                    indexes[1] = index_from
+                    index_to = index_from
 
-            index_to = indexes[1]
             data = ""
             for i, v in enumerate(self.path):
                 if i >= index_from and i <= index_to:
