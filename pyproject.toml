@@ -23,17 +23,13 @@ dependencies = [
     "wikipedia",
     "xlsxwriter",
     "requests",
-    "socket",
     "qdarkstyle",
     "validate_email",
     "opencv-python",
     "pyttsx3",
-    "speech_recognition"
+    "SpeechRecognition"
 ]
 
 [project.urls]
 Homepage = "https://github.com/AkshuDev/PheonixAppAPI"
 Issues = "https://github.com/AkshuDev/PheonixAppAPI/issues"
-
-[project.scripts]
-post-install = "post_install:post_install"
