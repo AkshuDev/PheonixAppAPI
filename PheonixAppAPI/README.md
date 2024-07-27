@@ -487,5 +487,5 @@ Returns:
 
 
 # Support
-For any assistance or inquiries, please contact the Pheonix Studios at [pheonix.community.mail@gmail.com] or go to [https://paperexcahange.wixsite.com/pheonixstudios]
+For any assistance or inquiries, please contact the Pheonix Studios at [pheonix.community.mail@gmail.com] or go to [https://paperexcahange.wixsite.com/pheonixstudios].
 To Find tutorials go to AkshobhyaEverything yt channel or PIdevz yt channel or PheonixStudios yt channel.
