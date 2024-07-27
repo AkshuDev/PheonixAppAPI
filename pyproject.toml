@@ -25,7 +25,6 @@ dependencies = [
     "requests",
     "socket",
     "qdarkstyle",
-    "ctypes",
     "validate_email",
     "opencv-python",
     "pyttsx3",
