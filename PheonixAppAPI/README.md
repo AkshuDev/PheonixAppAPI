@@ -226,7 +226,7 @@ Use the PATF_API class to manage the PATF file and perform other related tasks:
 
 ## Extra Functions
 
-NOTE: Extra functions are still under development and should not be used.
+**NOTE: Extra functions are still under development and should not be used.**
 
 ### Example Usage
 
@@ -445,7 +445,7 @@ not_successful_modules, success = api.ModuleAPI.DownloadModules(True, 'all', log
 
 ## File_Management
 ### Large_File_Management_System :
-NOTE: In this README file the functions are not mentioned because there are a lot of functions. To understand them -> Check Support Section at the end.
+**NOTE: In this README file the functions are not mentioned because there are a lot of functions. To understand them -> Check Support Section at the end.**
 
 A System for managing large amounts of Files.
 
