@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=61.0"]
-build-backend = "build_backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "PheonixAppAPI"
@@ -21,7 +21,6 @@ classifiers = [
 dependencies = [
     "PyQt5",
     "wikipedia",
-    "pickle",
     "configparser",
     "xlsxwriter",
     "requests",
@@ -39,3 +38,6 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/AkshuDev/PheonixAppAPI"
 Issues = "https://github.com/AkshuDev/PheonixAppAPI/issues"
+
+[project.scripts]
+post-install = "post_install:post_install"
