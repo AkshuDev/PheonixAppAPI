@@ -88,7 +88,7 @@ class Large_File_Management_System():
             os.mkdir(self.path[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Folder.try:\n{e}\n")
             return False
 
     def Make_Folders(self, indexes:tuple[int, Union[int, str]]=(0, "max")) -> bool:
@@ -108,7 +108,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.MakeFolders]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -119,7 +119,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Folders.try:\n{e}\n")
             return False
 
     def Make_File(self, index:int=0, mode:str="w") -> bool:
@@ -134,7 +134,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_File]")
             return False
 
         try:
@@ -142,7 +142,7 @@ class Large_File_Management_System():
                 file.write(self.content[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_File.try:\n{e}\n")
             return False
 
     def Make_Empty_File(self, index:int=0, mode:str="w") -> bool:
@@ -157,7 +157,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Empty_File]")
             return False
 
         try:
@@ -165,7 +165,7 @@ class Large_File_Management_System():
                 file.write('')
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Empty_File.try:\n{e}\n")
             return False
 
     def Make_Files(self, indexes:tuple[int, Union[int, str]]=(0, "max"), modes:list=["w"]) -> bool:
@@ -178,7 +178,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Files]")
             return False
 
         try:
@@ -189,7 +189,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Make_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -200,7 +200,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Files.try:\n{e}\n")
             return False
 
     def Make_Empty_Files(self, indexes:tuple[int, Union[int, str]]=(0, "max"), modes:list=["w"]) -> bool:
@@ -213,7 +213,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Empty_Files]")
             return False
 
         try:
@@ -224,7 +224,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Make_Empty_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -235,7 +235,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Empty_Files.try:\n{e}\n")
             return False
 
     def Read_File(self, index:int=0, character_index:int=0) -> str:
@@ -250,7 +250,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Read_File]")
             return False
 
 
@@ -261,7 +261,7 @@ class Large_File_Management_System():
                 data = file.read()
             return data
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Read_File.try:\n{e}\n")
             return ""
 
     def Read_Files(self, indexes:tuple=(0, Union[int, str]), character_indexes:list=[0]) -> list:
@@ -276,7 +276,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Read_Files]")
             return False
 
         try:
@@ -289,7 +289,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Read_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -300,7 +300,7 @@ class Large_File_Management_System():
                     data.append(self.Read_File(i, character_indexes[i]))
             return data
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Read_Files.try:\n{e}\n")
             return ""
 
     def Make_Json_File(self, index:int=0, mode:str="w") -> bool:
@@ -315,7 +315,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Json_File]")
             return False
 
         try:
@@ -323,10 +323,10 @@ class Large_File_Management_System():
                 json.dump(self.content[index], file)
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\PheonixAppAPI.apis.Large_File_Management_System.Make_Json_File.try:\n{e}\n")
             return False
 
-    def Make_JSON_Files(self, indexes:tuple[int, Union[int, str]]=(0, "max"), modes:list=["w"]) -> bool:
+    def Make_Json_Files(self, indexes:tuple[int, Union[int, str]]=(0, "max"), modes:list=["w"]) -> bool:
         """This function will create Files with json-like structure in the provided paths inside the provided list.
 
         Args:
@@ -336,7 +336,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Json_Files]")
             return False
 
         try:
@@ -347,7 +347,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Make_Json_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -358,7 +358,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Json_Files.try:\n{e}\n")
             return False
 
     def Move_File(self, index:int=0) -> bool:
@@ -371,14 +371,14 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Move_File]")
             return False
 
         try:
             shutil.move(self.path[index], self.path2[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Move_File.try:\n{e}\n")
             return False
 
     def Move_Files(self, indexes:tuple=(0, "max")) -> bool:
@@ -391,7 +391,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Move_Files]")
             return False
 
         try:
@@ -402,7 +402,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Move_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -413,7 +413,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Move_Files.try:\n{e}\n")
             return False
 
     def Delete_File(self, index:int=0) -> bool:
@@ -426,14 +426,14 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Delete_File]")
             return False
 
         try:
             os.remove(self.path[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Delete_File.try:\n{e}\n")
             return False
 
     def Delete_Files(self, indexes:tuple=(0, "max")) -> bool:
@@ -447,7 +447,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Delete_Files]")
             return False
 
         try:
@@ -458,14 +458,14 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Delete_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Delete_Files.try:\n{e}\n")
             return False
 
     def Delete_Folder(self, index:int=0) -> bool:
@@ -481,7 +481,7 @@ class Large_File_Management_System():
             os.rmdir(self.path[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Delete_Folder.try:\n{e}\n")
             return False
 
     def Delete_Folders(self, indexes:tuple=(0, "max")) -> bool:
@@ -501,7 +501,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Delete_Folders]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -512,7 +512,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Delete_Folders.try:\n{e}\n")
             return False
 
     def Remove_Tree(self, index:int=0) -> bool:
@@ -528,7 +528,7 @@ class Large_File_Management_System():
             shutil.rmtree(self.path[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Remove_Tree.try:\n{e}\n")
             return False
 
     def Remove_Trees(self, indexes:tuple=(0, "max")) -> bool:
@@ -548,7 +548,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Remove_Trees]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -559,7 +559,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Remove_Trees.try:\n{e}\n")
             return False
 
     def Rename_File(self, index:int=0) -> bool:
@@ -572,14 +572,14 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Rename_File]")
             return False
 
         try:
             os.rename(self.path[index], self.path2[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Rename_File.try:\n{e}\n")
             return False
 
     def Rename_Files(self, indexes:tuple=(0, "max")) -> bool:
@@ -592,7 +592,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Rename_Files]")
             return False
 
         try:
@@ -603,7 +603,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Rename_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -614,7 +614,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Rename_Files.try:\n{e}\n")
             return False
 
     def Rename_Folder(self, index:int=0) -> bool:
@@ -630,7 +630,7 @@ class Large_File_Management_System():
             os.rename(self.path[index], self.path2[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Rename_Folder.try:\n{e}\n")
             return False
 
     def Rename_Folders(self, indexes:tuple=(0, "max")) -> bool:
@@ -650,7 +650,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Rename_Folders]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -661,7 +661,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Rename_Folders.try:\n{e}\n")
             return False
 
     def Rename_File_Folder(self, index:int=0) -> bool:
@@ -677,7 +677,7 @@ class Large_File_Management_System():
             os.rename(self.path[index])
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Rename_File_Folder.try:\n{e}\n")
             return False
 
     def Rename_Files_Folders(self, indexes:tuple=(0, "max")) -> bool:
@@ -697,7 +697,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Rename_File_Folders]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -708,7 +708,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Rename_File_Folders.try:\n{e}\n")
             return False
 
     def Link(self, index:int=0) -> bool:
@@ -722,14 +722,14 @@ class Large_File_Management_System():
         """
 
         if self.isFile:
-            print("Not a File, defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File, defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Link]")
             return False
 
         try:
             os.link(self.path[index], self.path2[index])
 
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Link.try:\n{e}\n")
 
     def Links(self, indexes:tuple=(0, "max")) -> bool:
         """This function will make hard-links by provided list [path] and list [path2].
@@ -748,7 +748,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Links]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -759,7 +759,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Links.try:\n{e}\n")
             return False
 
     def Make_Encoded_File(self, index:int=0, mode:str="w") -> bool:
@@ -773,7 +773,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Encoded_File]")
             return False
 
         try:
@@ -782,7 +782,7 @@ class Large_File_Management_System():
                 file.write(content)
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Encoded_File.try:\n{e}\n")
             return False
 
     def Make_Encoded_Files(self, indexes:tuple=(0, "max"), modes:list=["w"]) -> bool:
@@ -796,7 +796,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Encoded_Files]")
             return False
 
         try:
@@ -807,7 +807,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Make_Encoded_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -818,7 +818,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Encoded_Files.try:\n{e}\n")
             return False
 
     def Make_Bin_Encoded_File(self, index:int=0, mode:str="wb") -> bool:
@@ -833,7 +833,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Bin_Encoded_File]")
             return False
 
         try:
@@ -842,10 +842,10 @@ class Large_File_Management_System():
                 file.write(content)
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Bin_Encoded_File.try:\n{e}\n")
             return False
 
-    def Make_BIN_Encoded_Files(self, indexes:tuple=(0, "max"), modes:list=["wb"]) -> bool:
+    def Make_Bin_Encoded_Files(self, indexes:tuple=(0, "max"), modes:list=["wb"]) -> bool:
         """The Files are in binary format.
         This function make a bunch of Files which are encoding using PEMU (Pheonix Encoding Method User) by the provided path in the list [path].
 
@@ -857,7 +857,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Make_Bin_Encoded_Files]")
             return False
 
         try:
@@ -868,7 +868,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Make_Bin_Encoded_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -879,7 +879,7 @@ class Large_File_Management_System():
 
             return True
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Make_Bin_Encoded_Files.try:\n{e}\n")
             return False
 
     def Read_Encoded_File(self, index:int=0, character_index:int=0) -> str:
@@ -894,7 +894,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Read_Encoded_File]")
             return False
 
         try:
@@ -904,7 +904,7 @@ class Large_File_Management_System():
                 data = BIN(content=file.read()).PCDMU()
             return data
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Read_Encoded_File.try:\n{e}\n")
             return ""
 
     def Read_Encoded_Files(self, indexes:tuple=(0, 'max'), character_indexes:list=[0]) -> list:
@@ -919,7 +919,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Read_Encoded_Files]")
             return False
 
         try:
@@ -932,7 +932,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Read_Encoded_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -943,7 +943,7 @@ class Large_File_Management_System():
                     data.append(self.Read_Encoded_File(i, character_indexes[i]))
             return data
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Read_Encoded_Files.try:\n{e}\n")
             return ""
 
     def Read_Bin_Encoded_File(self, index:int=0, character_index:int=0) -> str:
@@ -958,7 +958,7 @@ class Large_File_Management_System():
             bool: True if the operation was successful, False otherwise.
         """
         if not self.isFile:
-            print("Not a File. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not a File. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Read_Bin_Encoded_File]")
             return False
 
         try:
@@ -970,7 +970,7 @@ class Large_File_Management_System():
                 data = BIN(content=data).PCDMU()
             return data
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Read_Bin_Encoded_File.try:\n{e}\n")
             return ""
 
     def Read_Bin_Encoded_Files(self, indexes:tuple=(0, 'max'), character_indexes:list=[0]) -> list:
@@ -986,7 +986,7 @@ class Large_File_Management_System():
         """
 
         if not self.isFile:
-            print("Not Files. Defined in [isFile]. [Large_File_Management_System]")
+            print("Not Files. Defined in [isFile]. [PheonixAppAPI.apis.Large_File_Management_System.Read_Bin_Encoded_Files]")
             return False
 
         try:
@@ -999,7 +999,7 @@ class Large_File_Management_System():
                 if index_to.lower() == "max":
                     index_to = len(self.path)
                 else:
-                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[Large_File_Management_System]\n")
+                    print(f"\nWARNING: Invalid [indexes][{indexes[1]}]. Setting it to [{index_from}].[PheonixAppAPI.apis.Large_File_Management_System.Read_Bin_Encoded_Files]\n")
                     index_to = index_from
 
             index_to = int(index_to)
@@ -1010,5 +1010,5 @@ class Large_File_Management_System():
                     data.append(self.Read_Bin_Encoded_File(i, character_indexes[i]))
             return data
         except Exception as e:
-            print(f"\nLarge_File_Management_System:\n{e}\n")
+            print(f"\nPheonixAppAPI.apis.Large_File_Management_System.Read_Bin_Encoded_Files.try:\n{e}\n")
             return ""
