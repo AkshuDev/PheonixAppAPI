@@ -249,9 +249,11 @@ Maps can be used for adding your own encryption language to PheonixAppAPI by a m
 Creates a dictionary where each key is a character and each value is a unique, randomly assigned character.
 
 Args:
+
 keys (str, optional): The string of characters to use as keys and values. Defaults to a comprehensive set of keyboard characters.
 
 Returns:
+
 dict: A dictionary mapping each character to a unique, random character.
 
 #### push_map
@@ -259,10 +261,13 @@ dict: A dictionary mapping each character to a unique, random character.
 Writes the map to an encrypted file. Creates the file if it does not exist.
 
 Args:
+
 name (str): The name of the map to push.
+
 map_ (dict, optional): The dictionary map to push. Default Value is set to [{}].
 
 Returns:
+
 None: Nothing.
 
 #### get_map
@@ -270,13 +275,17 @@ None: Nothing.
 Retrieves and decrypts the map from the encrypted file.
 
 Args:
+
 name (str): The name of the map to get.
+
 map_ (dict, optional): This is not required by the user as it is only used for creating the object.
 
 Returns:
+
 dict: The decrypted map.
 
 Raises:
+
 Exception: If the map file does not exist.
 
 #### remove_maps
@@ -284,19 +293,25 @@ Exception: If the map file does not exist.
 A function to remove maps from the file.
 
 Attributes:
+
 mode (str): The name of the map.
 
 Available :
+
 1. one: Only removes the map that is at the first of the names list.
+
 2. list: Removes all the maps that are present in the names list.
+
 3. all: Removes all the maps except the default ones.
 
 names(list): The list of names to remove. If [mode] is [one] then only the first map in this list is removed.
 
 Raises:
+
 Exception: No Map File to begin with.
 
 Returns:
+
 None: Nothing.
 
 ## Binary Workings
@@ -324,9 +339,11 @@ Bin functions can be used as well as from api.py and from retrieving the BIN cla
 Convert a string, integer, or dictionary to its binary string representation.
 
 Args:
+
 data (typing.Union[str, int, dict]): The data to convert to binary.
 
 Returns:
+
 str: The binary string representation of the input data.
 
 #### bin_to_str
@@ -334,9 +351,11 @@ str: The binary string representation of the input data.
 Convert a binary string back to its original string representation.
 
 Args:
+
 data (str): The binary string to convert.
 
 Returns:
+
 str: The original string representation of the binary input.
 
 #### to_binINT :
@@ -344,11 +363,15 @@ str: The original string representation of the binary input.
 Convert a dictionary or string to a binary integer.
 
 Args:
+
 data_dict (dict, optional): The dictionary to convert. Defaults to an empty dictionary.
+
 data_str (str, optional): The string to convert. Defaults to an empty string.
+
 useString (bool, optional): Flag to indicate if data_str should be used. Defaults to True.
 
 Returns:
+
 int: The binary integer representation of the input data.
 
 #### str_to_bytes :
@@ -356,10 +379,13 @@ int: The binary integer representation of the input data.
 Convert a string, integer, or dictionary to its byte representation.
 
 Args:
+
 data (typing.Union[str, int, dict]): The data to convert to bytes.
+
 encoding (str, optional): The encoding to use for the conversion. Defaults to "utf-16".
 
 Returns:
+
 bytes: The byte representation of the input data.
 
 #### bytes_to_str :
@@ -367,10 +393,13 @@ bytes: The byte representation of the input data.
 Convert bytes back to a string using the specified encoding.
 
 Args:
+
 data (bytes): The byte data to convert.
+
 encoding (str, optional): The encoding to use for the conversion. Defaults to "utf-16".
 
 Returns:
+
 str: The string representation of the byte input.
 
 #### api.BIN :
@@ -378,19 +407,31 @@ str: The string representation of the byte input.
 Returns the BIN class of bin_worker.py for working with binary.
 
 Args:
-    path (str, optional): the path of the file while pushing data into file. Defaults to "./aol_var-dict.aolvd".
-    format (str, optional): The format to set the content_dict into while pushing dict. Defaults to "vardict-v0.001JSON".
-    encoding (str, optional): Encoding for the content or content_dict. Defaults to "utf-16".
-    encode (bool, optional): To Encode The Data. Recommended to leave it as it is. Defaults to False.
-    content (str, optional): The content in String. Defaults to "".
-    content_dict (dict, optional): The content in dictionary. Defaults to {}.
-    use_base64 (bool, optional): To encode using base64. NOTE: [low storage taking but less safe]. Defaults to False.
-    use_pheonixApp_encoder (bool, optional): To encode using our Encoder. NOTE: [High Storage taking in compare to base64 but more safe (3 Layer Encryption)]. Defaults to True.
-    compressed (bool, optional): To compress the size. After setting it to True the file will take less space but the Encryption will lose 1 layer. Defaults to False.
-    hyper_compressed (bool, optional): To hyper-compress the size. After setting it to True the file will take less space but the Encryption will lose 2 layers. Defaults to False.
 
-    NOTE: [This file is copied from our another program known as AOL(Assembly Orientated Language) and some of its functions are removed to match this Module]
+path (str, optional): the path of the file while pushing data into file. Defaults to "./aol_var-dict.aolvd".
+
+format (str, optional): The format to set the content_dict into while pushing dict. Defaults to "vardict-v0.001JSON".
+
+encoding (str, optional): Encoding for the content or content_dict. Defaults to "utf-16".
+
+encode (bool, optional): To Encode The Data. Recommended to leave it as it is. Defaults to False.
+
+content (str, optional): The content in String. Defaults to "".
+
+content_dict (dict, optional): The content in dictionary. Defaults to {}.
+
+use_base64 (bool, optional): To encode using base64. NOTE: [low storage taking but less safe]. Defaults to False.
+
+use_pheonixApp_encoder (bool, optional): To encode using our Encoder. NOTE: [High Storage taking in compare to base64 but more safe (3 Layer Encryption)]. Defaults to True.
+
+compressed (bool, optional): To compress the size. After setting it to True the file will take less space but the Encryption will lose 1 layer. Defaults to False.
+
+hyper_compressed (bool, optional): To hyper-compress the size. After setting it to True the file will take less space but the Encryption will lose 2 layers. Defaults to False.
+
+**NOTE: [This file is copied from our another program known as AOL(Assembly Orientated Language) and some of its functions are removed to match this Module]**
+
 Returns:
+
     bin_worker.BIN: The class for working with binary
 
 ## ModuleAPI
@@ -401,19 +442,28 @@ Module API is a way of interacting with modules.
 Checks the specified modules. Script Version.
 
 Args:
-    prompt(bool, optional): This defines shall the script prompt the user for downloading the modules. If it is false it doesn't download modules. Default to False.
-    mode (str, optional): The mode for checking modules. Default to 'list':
-    Available Modes are ->
-        1. 'all' This mode checks for all PheonixApp required Modules.
-        2. 'list' This mode checks for the specified list.
-        3. 'module' This mode checks for a specified module.
 
-    module (str, optional): The specific module to check. Defaults to 'PheonixAppAPI'.
-    module_list (list, optional): The list of modules to check. Defaults to ['PheonixAppAPI'].
-    log (bool, optional): If prompt is active log wil give info about the download. Defaults to False.
+prompt(bool, optional): This defines shall the script prompt the user for downloading the modules. If it is false it doesn't download modules. Default to False.
+
+mode (str, optional): The mode for checking modules. Default to 'list':
+
+Available Modes are ->
+
+1. 'all' This mode checks for all PheonixApp required Modules.
+
+2. 'list' This mode checks for the specified list.
+
+3. 'module' This mode checks for a specified module.
+
+module (str, optional): The specific module to check. Defaults to 'PheonixAppAPI'.
+
+module_list (list, optional): The list of modules to check. Defaults to ['PheonixAppAPI'].
+
+log (bool, optional): If prompt is active log wil give info about the download. Defaults to False.
 
 Returns:
-    tuple[list, bool]: The tuple's first part is the uninstalled modules from the provided list [module_list]. The second part is True if the module/all modules from the provided list [module_list]  are installed, else False.
+
+tuple[list, bool]: The tuple's first part is the uninstalled modules from the provided list [module_list]. The second part is True if the module/all modules from the provided list [module_list]  are installed, else False.
 
 ##### Example Usage
     not_installed_modules, success = api.ModuleAPI.CheckModules(False, 'all', log=False)
@@ -422,20 +472,31 @@ Returns:
 Downloads the specified modules. Script Version.
 
 Args:
-    prompt(bool, optional): This defines shall the script prompt the user for downloading the modules. If it is false it doesn't ask the user for permission to download modules. Default to False.
-    mode (str, optional): The mode for downloading modules. Default to 'list':
-    Available Modes are ->
-        1. 'all' This mode downloads for all PheonixApp required Modules.
-        2. 'list' This mode downloads for the specified list.
-        3. 'module' This mode downloads for a specified module.
 
-    module (str, optional): The specific module to download. To install a specific version add [==] after the name and specify the version after the sign, keep no spaces. Defaults to 'PheonixAppAPI'.
-    module_list (list, optional): The list of modules to download. To install a specific version add [==] after the name and specify the version after the sign, keep no spaces, do it for all the modules in the list that you want to have a specific version. Defaults to ['PheonixAppAPI'].
-    log (bool, optional): If set to True this wil give info about the download, otherwise it will not. Defaults to False.
-    upgraded_module (bool, optional): If set to True it will download the latest version of the module. Defaults to True.
+prompt(bool, optional): This defines shall the script prompt the user for downloading the modules. If it is false it doesn't ask the user for permission to download modules. Default to False.
+
+mode (str, optional): The mode for downloading modules. Default to 'list':
+
+Available Modes are ->
+
+1. 'all' This mode downloads for all PheonixApp required Modules.
+
+2. 'list' This mode downloads for the specified list.
+
+3. 'module' This mode downloads for a specified module.
+    
+
+module (str, optional): The specific module to download. To install a specific version add [==] after the name and specify the version after the sign, keep no spaces. Defaults to 'PheonixAppAPI'.
+
+module_list (list, optional): The list of modules to download. To install a specific version add [==] after the name and specify the version after the sign, keep no spaces, do it for all the modules in the list that you want to have a specific version. Defaults to ['PheonixAppAPI'].
+
+log (bool, optional): If set to True this wil give info about the download, otherwise it will not. Defaults to False.
+
+upgraded_module (bool, optional): If set to True it will download the latest version of the module. Defaults to True.
 
 Returns:
-    tuple[list, bool]: The tuple's first part is the uninstalled modules from the provided list [module_list]. The second part is True if the module/all modules from the provided list [module_list]  are successfully installed, else False.
+
+tuple[list, bool]: The tuple's first part is the uninstalled modules from the provided list [module_list]. The second part is True if the module/all modules from the provided list [module_list]  are successfully installed, else False.
 
 ##### Example Usage
 not_successful_modules, success = api.ModuleAPI.DownloadModules(True, 'all', log=True, upgraded_module=True)
@@ -445,15 +506,22 @@ not_successful_modules, success = api.ModuleAPI.DownloadModules(True, 'all', log
 A System for managing large amounts of Files.
 
 Args:
-    path (Union[str, list, pathlib.Path, pathlib.PurePath, pathlib.PurePosixPath, pathlib.PosixPath, pathlib.PureWindowsPath, pathlib.WindowsPath]): The Path/Paths of File/Files/Folder/Folders.
-    path2 (Union[str, list, pathlib.Path, pathlib.PurePath, pathlib.PurePosixPath, pathlib.PosixPath, pathlib.PureWindowsPath, pathlib.WindowsPath], optional): The second Path/Paths of File/Files/Folder/Folders. Defaults to [].
-    content (list, optional): The content of File/Files. Defaults to [''].
-    isFile (bool, optional): If the Paths represent Files/File. Defaults to False.
-    name (list, optional): The name/names of the Folders/Folder/Files/File. Defaults to [''].
-    include_name (bool, optional): To be set to False if the name of the Folders are present in the list else True. Defaults to False.
+
+path (Union[str, list, pathlib.Path, pathlib.PurePath, pathlib.PurePosixPath, pathlib.PosixPath, pathlib.PureWindowsPath, pathlib.WindowsPath]): The Path/Paths of File/Files/Folder/Folders.
+
+path2 (Union[str, list, pathlib.Path, pathlib.PurePath, pathlib.PurePosixPath, pathlib.PosixPath, pathlib.PureWindowsPath, pathlib.WindowsPath], optional): The second Path/Paths of File/Files/Folder/Folders. Defaults to [].
+
+content (list, optional): The content of File/Files. Defaults to [''].
+
+isFile (bool, optional): If the Paths represent Files/File. Defaults to False.
+
+name (list, optional): The name/names of the Folders/Folder/Files/File. Defaults to [''].
+
+include_name (bool, optional): To be set to False if the name of the Folders are present in the list else True. Defaults to False.
 
 Returns:
-    Large_File_Management_System
+
+Large_File_Management_System
 
 ## APIS (Application Programming Interfaces)
 ### Import
@@ -470,4 +538,5 @@ Returns:
 
 # Support
 For any assistance or inquiries, please contact the Pheonix Studios at [pheonix.community.mail@gmail.com] or go to [https://paperexcahange.wixsite.com/pheonixstudios]
+
 To Find tutorials go to AkshobhyaEverything yt channel or PIdevz yt channel or PheonixStudios yt channel.
