@@ -82,7 +82,6 @@ class Map():
             data = json.loads(HashDecoderT.Decode(data, "Hype_Space_BIN").run())
             file.close()
 
-        print(HashDecoderT.Encode(json.dumps(self.map_), "Hype_Space_BIN", "Community").run())
         data[self.name] = self.map_
 
         data = HashDecoderT.Encode(json.dumps(data), "Hype_Space_BIN", "Community").run()
