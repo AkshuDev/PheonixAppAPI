@@ -111,6 +111,15 @@ class PheonixStudiosAccessFile:
 
         return content
 
+    def _process_data_READ(self, data:dict) -> dict:
+        for key, value in data["Important Variables"].items():
+            if key.lower() == "path":
+                #Path Converter
+                value = pathlib.Path(value).absolute
+                data["Important Variables"][key] = value
+
+        return data
+
     def read(self, name_of_file:str) -> dict:
         """Reads the paaf file
 
@@ -125,8 +134,12 @@ class PheonixStudiosAccessFile:
             f.seek(0)
             data = f.read()
 
-        #process data
+        # Convert Data to Dictionary
         data = self._str_to_dict(data)
+
+        # Process the Data
+
+        data = self._process_data_READ(data)
 
         return data
 
