@@ -13,7 +13,7 @@ class JsonFileManager:
         Args:
             path (str): The path to the Json File.
         """
-        path = path
+        self.path = path
 
     def JsonToDict(self) -> dict:
         """Converts a Json object to a dictionary.
