@@ -1,7 +1,0 @@
-{
-    "ModuleRegistry": {
-        "PheonixStudios": {
-            "Names": ["PheonixAppAPI", "pcd_py", "PheonixJson"]
-        }
-    }
-}
