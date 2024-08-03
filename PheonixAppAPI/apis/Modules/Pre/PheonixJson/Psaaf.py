@@ -121,7 +121,7 @@ class PheonixStudiosAccessFile:
         return data
 
     def read(self, name_of_file:str) -> dict:
-        """Reads the paaf file
+        """Reads a .psaaf file
 
         Args:
             name_of_file (str): The name of the file to read without the extension
