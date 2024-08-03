@@ -77,6 +77,10 @@ class API():
         from PheonixAppAPI.apis.ModuleAPI import DownloadModules
         return DownloadModules(prompt, mode, module, module_list, log, upgraded_module)
 
+    def GetModulePathAPI(module_name:str, directory:bool=False, absolute_path:bool=True) -> str:
+        from PheonixAppAPI.apis.ModuleAPI import GetModulePath
+        return GetModulePath(module_name, directory, absolute_path)
+
     def getCertificatePath(self, code:str="", flag:str="+BOOL") -> str:
         return self.pss.getCertificatePath(code, flag)
 
