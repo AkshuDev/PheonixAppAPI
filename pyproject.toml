@@ -33,6 +33,8 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/AkshuDev/PheonixAppAPI"
 Issues = "https://github.com/AkshuDev/PheonixAppAPI/issues"
+Website = "https://paperecahange.wixsite.com/pheonixstudios"
+Source = "https://github.com/AkshuDev/PheonixAppAPI"
 
 [tool.setuptools]
 packages = ["PheonixAppAPI"]
