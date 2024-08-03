@@ -648,6 +648,20 @@ class ModuleAPI:
     """The API for module management
     """
     @staticmethod
+    def GetModulePath(module_name:str, directory:bool=False, absolute_path:bool=True) -> str:
+        """This module returns the path of the provided module.
+
+        Args:
+            module_name (str): The name of the module.
+            directory (bool, optional): If true it returns the directory containing the module else the __init__.py file of the module. Defaults to False.
+            absolute_path (bool, optional): If True then it returns the absolute path of the module. Defaults to True.
+
+        Returns:
+            str: The output path of the module
+        """
+        return PATF.GetModulePathAPI(module_name, directory, absolute_path)
+
+    @staticmethod
     def CheckModules(prompt:bool=True, mode:str="list", module:str="PheonixAppAPI", module_list=["PheonixAppAPI"]) -> tuple[list, bool]:
         """Checks the specified modules. Script Version.
 
