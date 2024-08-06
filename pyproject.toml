@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PheonixAppAPI"
-version = "0.2.4-pre"
+version = "0.2.4.2-pre"
 authors = [
   { name="Pheonix Studios", email="pheonix.community.mail@gmail.com" },
   { name="Akshobhya Sasun", email="akshobhyasasun@gmail.com" },
@@ -27,7 +27,10 @@ dependencies = [
     "validate_email",
     "opencv-python",
     "pyttsx3",
-    "SpeechRecognition"
+    "SpeechRecognition",
+    "cryptography",
+    "PyCryptodome",
+    "sympy"
 ]
 
 [project.urls]
@@ -37,4 +40,18 @@ Website = "https://paperecahange.wixsite.com/pheonixstudios"
 Source = "https://github.com/AkshuDev/PheonixAppAPI"
 
 [tool.setuptools]
-packages = ["PheonixAppAPI"]
+packages = ["PheonixAppAPI",
+"PheonixAppAPI.apis",
+"PheonixAppAPI.Scripts",
+"PheonixAppAPI.pheonixapp",
+"PheonixAppAPI.apis.Modules",
+"PheonixAppAPI.apis.Modules.lib",
+"PheonixAppAPI.apis.Modules.Pre",
+"PheonixAppAPI.apis.Modules.Pre.PheonixJson",
+"PheonixAppAPI.apis.Modules.Pre.PheonixExceptions",
+"PheonixAppAPI.pheonixapp.files",
+"PheonixAppAPI.pheonixapp.files.Mapper",
+"PheonixAppAPI.pheonixapp.files.ObjectDetector",
+"PheonixAppAPI.pheonixapp.files.GUI",
+"PheonixAppAPI.pheonixapp.files._PCD_"
+]
