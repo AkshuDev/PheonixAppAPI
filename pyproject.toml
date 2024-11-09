@@ -53,7 +53,7 @@ packages = ["PheonixAppAPI",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.HGame",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.ModuleController",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.PLTEC",
-"PheonixAppAPI.apis.Modules.Pre.phardwareitk.System"
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.System",
 "PheonixAppAPI.pheonixapp.files",
 "PheonixAppAPI.pheonixapp.files.Mapper",
 "PheonixAppAPI.pheonixapp.files.ObjectDetector",
