@@ -1,0 +1,172 @@
+    <!--
+     _____              .___       __________            _____   __           .__          ___.   .__
+   /     \ _____     __| _/____   \______   \___.__.   /  _  \ |  | __  _____|  |__   ____\_ |__ |  |__ ___.__._____
+  /  \ /  \\__  \   / __ |/ __ \   |    |  _<   |  |  /  /_\  \|  |/ / /  ___/  |  \ /  _ \| __ \|  |  <   |  |\__  \
+ /    Y    \/ __ \_/ /_/ \  ___/   |    |   \\___  | /    |    \    <  \___ \|   Y  (  <_> ) \_\ \   Y  \___  | / __ \_
+ \____|__  (____  /\____ |\___  >  |______  // ____| \____|__  /__|_ \/____  >___|  /\____/|___  /___|  / ____|(____  /
+         \/     \/      \/    \/          \/ \/              \/     \/     \/     \/           \/     \/\/          \/
+     ___ ___________                      .___             ___
+    /  / \_   _____/___  __ __  ____    __| _/___________  \  \
+   /  /   |    __)/  _ \|  |  \/    \  / __ |/ __ \_  __ \  \  \
+  (  (    |     \(  <_> )  |  /   |  \/ /_/ \  ___/|  | \/   )  )
+   \  \   \___  / \____/|____/|___|  /\____ |\___  >__|     /  /
+    \__\      \/                   \/      \/    \/        /__/
+
+
+
+
+
+
+ __________.__                        .__           _________ __            .___.__
+ \______   \  |__   ____  ____   ____ |__|__  ___  /   _____//  |_ __ __  __| _/|__| ____  ______
+  |     ___/  |  \_/ __ \/  _ \ /    \|  \  \/  /  \_____  \\   __\  |  \/ __ | |  |/  _ \/  ___/
+  |    |   |   Y  \  ___(  <_> )   |  \  |>    <   /        \|  | |  |  / /_/ | |  (  <_> )___ \
+  |____|   |___|  /\___  >____/|___|  /__/__/\_ \ /_______  /|__| |____/\____ | |__|\____/____  >
+                \/     \/           \/         \/         \/                 \/               \/       -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pheonix MPA Server</title>
+    </head>
+    <style>
+        body{
+            background-color: black;
+        }
+        #h1{
+            text-align: center;
+            color: white;
+        }
+    </style>
+    <body>
+        <h1 id="h1"><b>Pheonix MPA Server</b></h1>
+        <br>
+        <script>
+            if (!localStorage.getItem("Back From Page PR")){
+                if (!localStorage.getItem("Back From Page")){
+                    var id = prompt("Id");
+                    var realid = "2";
+                    if (id == realid){
+                        var pass = prompt("Password");
+                        var realpassword = "MPA@PC";
+                        if (realpassword == pass){
+                            var func = prompt("Function");
+                            if (func == "ssedit"){
+                                var dbid = prompt("DB id");
+                                if(sessionStorage.getItem(dbid)){
+                                    throw Error("Db Id Taken");
+                                    errHTML("002");
+                                }
+                                else{
+                                    SSEdit(dbid);
+                                    var sscount = sessionStorage.length;
+                                    sscount -= 1;
+                                    while(sscount != 0){
+                                        console.log(sscount);
+                                        CreateElementMPA(sessionStorage.getItem("db_"+sscount));
+                                        sscount -= 1;
+                                    }
+                                }
+                            }
+                            if (func == "MPA Server"){
+                                var sscount = sessionStorage.length;
+                                sscount -= 1;
+                                while(sscount != 0){
+                                    console.log(sscount)
+                                    CreateElementMPA(sessionStorage.getItem("db_"+sscount));
+                                    sscount -= 1;
+                                }
+                            }
+                            if (func == "MPA PRecipt Edit"){
+                                var prBuyerName = prompt("Payment Recipt (Name of Buyer)");
+                                savePRecipts(prBuyerName)
+                                CreateElementMPA_PR(prBuyerName)
+                            }
+                            if(func == "MPA PRecipt Server"){
+                                var prBuyerName = prompt("Payment Recipt (Name of Buyer)")
+                                CreateElementMPA_PR(prBuyerName)
+                            }
+                        }
+                        else{
+                            document.getElementById("h1").textContent = "MPA Error - 001";
+                            throw Error("Id or Passord Wrong");
+                        }
+                    }
+                    else{
+                        document.getElementById("h1").textContent = "MPA Error - 001";
+                        throw Error("Id or Passord Wrong");
+                    }
+                }
+                else{
+                    localStorage.removeItem("Back From Page")
+                    var sscount = sessionStorage.length;
+                    sscount -= 1;
+                    while(sscount != 0){
+                        console.log(sscount)
+                        CreateElementMPA(sessionStorage.getItem("db_"+sscount));
+                        sscount -= 1;
+                    }
+                }
+            }
+            else{
+                var name = prompt("Payment Recipt (Name of Buyer)");
+                localStorage.removeItem("PR_B_NAME");
+                localStorage.removeItem("PR to access");
+                localStorage.removeItem("Back From Page PR");
+                CreateElementMPA_PR(name);
+            }
+
+            function SSEdit(id){
+                var db = prompt("DB Name");
+                sessionStorage.setItem("db_"+id.toString(), db);
+            };
+
+            function CreateElementMPA(fs){
+                localStorage.setItem("DB to access", fs);
+                let db = document.createElement('button');
+                db.innerHTML = "<a href=db.html>"+fs+"</a>";
+                db.style.backgroundColor = "black";
+                db.style.color = "white";
+                db.style.fontSize = "24px";
+                db.style.border = "2px solid white";
+                db.style.borderRadius = "15px";
+                document.body.appendChild(db);
+                console.log(fs);
+            };
+
+            function errHTML(errval){
+                document.getElementById("h1").textContent = "MPA Error - "+errval;
+            };
+
+            function savePRecipts(prBuyerName){
+                var prDateOfB = prompt("Payment Recipt (Date when he will buy it)");
+                var prProduct = prompt("Payment Recipt (Name of Product)");
+                var prMaterial = prompt("Payment Recipt (Material)");
+                var prLEDLights = prompt("Payment Recipt (LED Lights)");
+                var prMore = prompt("Payment Recipt (More)");
+                var grand_total = prompt("Payment Recipt (Grand Total)");
+
+                sessionStorage.setItem("_PR Buyer Name", prBuyerName);
+                sessionStorage.setItem(prBuyerName+"_PR Product Name", prProduct);
+                sessionStorage.setItem(prBuyerName+"_PR Buy Date", prDateOfB);
+                sessionStorage.setItem(prBuyerName+"_PR Material", prMaterial);
+                sessionStorage.setItem(prBuyerName+"_PR LED Lights", prLEDLights);
+                sessionStorage.setItem(prBuyerName+"_PR More", prMore);
+                sessionStorage.setItem(prBuyerName+"_Grand Total", grand_total);
+            };
+
+            function CreateElementMPA_PR(name){
+                localStorage.setItem("PR to access", name);
+                let pr = document.createElement('button');
+                pr.innerHTML = "<a href=pr.html>"+name+"</a>";
+                pr.style.backgroundColor = "black";
+                pr.style.color = "white";
+                pr.style.fontSize = "24px";
+                pr.style.border = "2px solid white";
+                pr.style.borderRadius = "15px";
+                document.body.appendChild(pr);
+                console.log(name);
+            };
+        </script>
+    </body>
+</html>
