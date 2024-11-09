@@ -16,7 +16,9 @@ from PheonixAppAPI.Scripts.post_install import Encrypt_Maps
 
 class PTDMEDMU():
     """This class stands for Pheonix Three Dimensional Matrix Encrypt/Decrypt Method User. This method encrypts each character 4 times placing it on one of the cells from one of the 6 grids. This is a hard to crack method.
-    NOTE: The available bytes for encryption are anywhere from 1 to 900."""
+    NOTE: The available bytes for encryption are anywhere from 1 to 900.
+    
+    NOTE: No decrypt available right now. Under development."""
     def __init__(self) -> None:
         """This class stands for Pheonix Three Dimensional Encrypt/Decrypt Method User. This method encrypts each character 4 times placing it on one of the cells from one of the 6 grids. This is a hard to crack method.
         NOTE: The available bytes for encryption are anywhere from 1 to 900."""
