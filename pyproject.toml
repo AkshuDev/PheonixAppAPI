@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PheonixAppAPI"
-version = "0.2.4.2-pre"
+version = "0.2.5"
 authors = [
   { name="Pheonix Studios", email="pheonix.community.mail@gmail.com" },
   { name="Akshobhya Sasun", email="akshobhyasasun@gmail.com" },
@@ -19,15 +19,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "PyQt5",
     "wikipedia",
     "xlsxwriter",
     "requests",
-    "qdarkstyle",
-    "validate_email",
-    "opencv-python",
-    "pyttsx3",
-    "SpeechRecognition",
     "cryptography",
     "PyCryptodome",
     "sympy"
@@ -49,6 +43,17 @@ packages = ["PheonixAppAPI",
 "PheonixAppAPI.apis.Modules.Pre",
 "PheonixAppAPI.apis.Modules.Pre.PheonixJson",
 "PheonixAppAPI.apis.Modules.Pre.PheonixExceptions",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.CLI",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.ErrorSystem",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.Extentions",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.FileSystem",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.GUI",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.GUI.C",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.HGame",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.ModuleController",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.PLTEC",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.System"
 "PheonixAppAPI.pheonixapp.files",
 "PheonixAppAPI.pheonixapp.files.Mapper",
 "PheonixAppAPI.pheonixapp.files.ObjectDetector",
