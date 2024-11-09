@@ -8,8 +8,196 @@ import Crypto
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 
+from numpy import mgrid
 from sympy import nextprime, isprime
 import random
+
+from PheonixAppAPI.Scripts.post_install import Encrypt_Maps
+
+class PTDMEDMU():
+    """This class stands for Pheonix Three Dimensional Matrix Encrypt/Decrypt Method User. This method encrypts each character 4 times placing it on one of the cells from one of the 6 grids. This is a hard to crack method.
+    NOTE: The available bytes for encryption are anywhere from 1 to 900.
+    
+    NOTE: Doesn't include Decrypt yet. [Under Development]"""
+    def __init__(self) -> None:
+        """This class stands for Pheonix Three Dimensional Encrypt/Decrypt Method User. This method encrypts each character 4 times placing it on one of the cells from one of the 6 grids. This is a hard to crack method.
+        NOTE: The available bytes for encryption are anywhere from 1 to 900."""
+        from PheonixAppAPI.apis.Modules.Pre.PheonixCipherTools.LIB import CipherTools
+        self.Pheonix_3D_Matrix_Table = CipherTools.pheonix_3d_matrix_v1
+        self.Pheonix_3D_Matrix_SBOX = CipherTools.pheonix_3d_matrix_sbox
+        self.enc_times_round = 0
+
+    @staticmethod
+    def new(key:Union[str, int, bytes], use_sys_info:bool=False, value:Union[str, bytes, int]="") -> tuple[str, str]:
+        """This function allows you to use the encrypt and decrypt methods.
+        Args:
+            key(Union[str, int, bytes]): The key to be used.
+            use_sys_info(bool, optional): This defines wether to set/append the key with the sys-info of the computer. This is helpful when you want only a specific computer to decode the message. Defaults to False.
+            value(Union[str, bytes, int], optional): This defines to value to be encrypted or decrypted. Defaults to ''.
+
+        Returns:
+            tuple[str, str]: The first value is the key and the second value is the output value. NOTE: Please use the output value as it is modified to match the len of the key."""
+
+        if isinstance(key, int) or isinstance(key, str):
+            key = str(key)
+        elif isinstance(key, bytes):
+            key = key.decode()
+
+        if isinstance(value, int) or isinstance(value, str):
+            value = str(value)
+        elif isinstance(value, bytes):
+            value = value.decode()
+
+        import hashlib
+        if use_sys_info:
+            import platform
+            import uuid
+
+            system_info = platform.uname()
+            mac_address = uuid.getnode()
+
+            key = f"{key}-{system_info.system}-{system_info.node}-{system_info.release}-{system_info.version}-{mac_address}"
+
+            # Hash the identifier to get a consistent length output
+            key = hashlib.sha256(key.encode()).hexdigest()
+        else:
+            key = hashlib.sha256(key.encode()).hexdigest()
+
+        if len(key) > len(value):
+            key = key[:len(value)]
+        elif len(key) < len(value):
+            subLen = len(value) - len(key)
+            left = subLen
+            import secrets
+            while left > 0:
+                key += str(secrets.randbelow(9-1 + 1) + 1)
+                left -= 1
+
+        return key, value
+
+    def adjust_ascii(self, val, pos_list):
+        """Adjust ASCII value as per the given rules."""
+        digit = int(val)
+        result = []
+        og_result = []
+        digit = int(digit)
+        if digit in [1, 2, 3]:
+            result = digit
+            og_result = digit
+        else:
+            og_result = digit
+            # Round digit to random value
+            if pos_list == []:
+                digit = "1 1 1"
+            else:
+                last_pos =  pos_list[len(pos_list) - 1]
+                last_grid, last_subgrid, last_cell = map(int, last_pos.split(" "))
+                if last_grid != 10:
+                    digit = str(last_grid + 1) + " 1 1"
+                elif last_subgrid != 10:
+                    digit = "10 " + str(last_subgrid + 1) + " 1"
+                elif last_cell != 10:
+                    digit = "10 10 " + str(last_cell + 1)
+                else:
+                    raise Exception("Invalid position. Can only happend due to altering of encryption code or invalid value size")
+            result = digit
+        return str(result), str(og_result)
+
+    def process_ascii(self, ascii_val, pos, pos_list, getpos):
+        """Process ASCII value with additional checks and modifications."""
+        og = []
+
+        if getpos:
+            pos, og = self.adjust_ascii(ascii_val, pos_list)
+
+        # Ensure ASCII processing is unique for each position
+        processed_ascii, og = self.adjust_ascii(ascii_val, pos_list)
+        if pos in pos_list:
+            # Apply some modification if the position is repeated
+            ascii_val = (ascii_val + 1) % 256
+            processed_ascii, og = self.adjust_ascii(ascii_val, pos_list)
+
+        return processed_ascii, og
+
+    def encrypt(self, key:Union[str, int, bytes], value:Union[str, int, bytes]) -> bytes:
+        """This method encrypts the given value. NOTE: Please use the output value provided from the new method.
+
+        Args:
+            key (Union[str, int, bytes]): The key to use.
+            value (Union[str, int, bytes]): The value to encrypt.
+
+        Returns:
+            bytes: The output encryption.
+        """
+
+        import struct
+
+        if isinstance(key, int) or isinstance(key, str):
+            key = str(key)
+        elif isinstance(key, bytes):
+            key = key.decode()
+
+        if isinstance(value, int) or isinstance(value, str):
+            value = str(value)
+        elif isinstance(value, bytes):
+            value = value.decode()
+
+        key = key.encode()
+        value = value.encode()
+
+        str_value = value.decode()
+
+        code_points = [ord(char) for char in str_value]
+        modified_code_points = [(code_point * 2 + 3) % 256 for code_point in code_points]
+        modified_text = ''.join(chr(code_point) for code_point in modified_code_points)
+
+        # Padding or truncation to match original length
+        if len(modified_text) < len(value):
+            modified_text += " " * (len(value) - len(modified_text))
+        else:
+            modified_text = modified_text[:len(value)].encode()
+
+        result = bytes(a ^ b for a, b in zip(key, modified_text))
+
+        enc_chars = []
+        pos_list = []
+
+        for i, byte in enumerate(result):
+            char = chr(byte)
+            enc = char.encode("utf-8")
+            ascii_ = ord(char)
+
+            p_ascii, og_pos = self.process_ascii(ascii_, "", pos_list, True)
+
+            pos_list.append(p_ascii)
+            enc_chars.append(enc)
+
+        final_result = []
+        final_chars = []
+        char_be = []
+        current = 0
+        for char, pos in zip(enc_chars, pos_list):
+            i = 2
+            char = char.decode()
+            grid, subgrid, cell = map(int, pos.split(' '))
+            mGrid, mSubgrid, mCell = self.Pheonix_3D_Matrix_Table[f'{grid} {subgrid} {cell}'].split()
+            subs_char = self.Pheonix_3D_Matrix_SBOX[char].encode()
+            subs_char = bytes(a ^ b for a, b in zip(key, subs_char))
+            while i > 0:
+                mGrid, mSubgrid, mCell = self.Pheonix_3D_Matrix_Table[f'{mGrid} {mSubgrid} {mCell}'].split()
+                subs_char = self.Pheonix_3D_Matrix_SBOX[subs_char.decode()].encode()
+                subs_char = bytes(a ^ b for a, b in zip(key, subs_char))
+                i -= 1
+            final_chars.append(subs_char)
+            final_result.append(f"{mGrid, mSubgrid, mCell}")
+            current += 1
+
+        for i, v in enumerate(final_chars):
+            final_chars[i] = v.decode()
+
+        encrypted_data = ''.join(final_chars)
+
+        return encrypted_data
 
 class PMEDMU():
     """This class stands for Pheonix Mathematical Encrypt/Decrypt Method User. This method uses large primes for doing encryption and decryption. It normally uses the MAC address of a computer but more keys can be added to it.
