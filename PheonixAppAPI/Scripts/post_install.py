@@ -174,6 +174,13 @@ def post_install() -> None:
     print("Process finished.")
     print("All keys are now secured successfully!")
     print("All Required Files are now installed!")
+    print("Installing More Modules.")
+    os.system("pip install qdarkstyle")
+    os.system("pip install validate_email")
+    os.system("pip install opencv-python")
+    os.system("pip install pyttsx3")
+    os.system("pip install SpeechRecognition")
+    os.system("pip install PyQt5")
 
 if __name__ == "__main__":
     post_install()
