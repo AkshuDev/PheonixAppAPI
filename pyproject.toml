@@ -24,7 +24,10 @@ dependencies = [
     "requests",
     "cryptography",
     "PyCryptodome",
-    "sympy"
+    "sympy",
+    "pysdl2",
+    "pysdl2-dll",
+    "PyOpenGL"
 ]
 
 [project.urls]
@@ -46,7 +49,7 @@ packages = ["PheonixAppAPI",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.CLI",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.ErrorSystem",
-"PheonixAppAPI.apis.Modules.Pre.phardwareitk.Extentions",
+"PheonixAppAPI.apis.Modules.Pre.phardwareitk.Extensions",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.FileSystem",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.GUI",
 "PheonixAppAPI.apis.Modules.Pre.phardwareitk.HGame",
