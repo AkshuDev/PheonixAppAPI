@@ -1,0 +1,46 @@
+name: Build and Deploy Docs to Read the Docs
+
+on:
+  push:
+    branches:
+      - main  # Specify default branch
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'  # Specify the Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install sphinx
+        pip install sphinx-autodoc-typehints
+        pip install sphinx_rtd_theme
+        pip install recommonmark
+        pip install nbsphinx
+
+    - name: Build the documentation
+      run: |
+        sphinx-build -b html docs/source docs/build
+
+    - name: Deploy to Read the Docs
+      env:
+        READTHEDOCS_API_TOKEN: ${{ secrets.READTHEDOCS_API_TOKEN }}
+      run: |
+        curl -X POST \
+        -F "file=@docs/build/html/index.html" \
+        -F "project_slug=your_project_slug" \
+        -F "version_slug=latest" \
+        -H "Authorization: Bearer $READTHEDOCS_API_TOKEN" \
+        https://readthedocs.org/api/v3/version/your_project_slug/latest/build/
