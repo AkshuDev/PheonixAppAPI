@@ -220,6 +220,12 @@ This class uses PyCryptodome for providing with tested security encryptions. Thi
 #### _AES_MODES:
 This class provides all the AES modes that can be passes to the **_AES_** class.
 
+#### PTDMEDMU:
+(Pheonix Three Dimentional Mathematical Encryption / Decryption Method User) is a very very complex Encryption and Decryption Clas.
+
+#### Methods:
+ - **Encrypt()**
+
 Examples
 --------
 
