@@ -1,0 +1,13 @@
+{
+    "ELF": "",
+    "x86": "",
+    "SET": {
+        "#include:/*DVALUE/INCLUDEINS/S ": "includeFuncs",
+        "BasicIO/INCLUDE": {
+            "print:/*DVALUE/*DNAME/S ": "printINS",
+            "input:/*DNAME/*DSIZE/S ": "inputINS",
+            "clean:/S": "cleanupINS",
+            "return:/*DVALUE/S ": "returnINS"
+        }
+    }
+}
