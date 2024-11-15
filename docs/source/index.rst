@@ -6,16 +6,15 @@ Pheonix App 1.0 is a versatile Python application designed to streamline various
 Contents:
 ---------
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
    Introduction
-
    Installation
-
    Usage
-
    Api_reference
-
    Examples
-
    Support
 
 Installation
@@ -124,22 +123,24 @@ To play a mini-game like Guess The Number:
 d. PATF Commands
 Manage the PATF file with PATF_API class:
 
-patf_api = api.PATF_API()
-patf_api.run("terminal --createfile")
+   patf_api = api.PATF_API()
+   patf_api.run("terminal --createfile")
 
-Utilities
-Calculator:
+e. Utilities
+i. Calculator:
 
-utils = api.Utilities()
-utils.Calc_Terminal()
+   utils = api.Utilities()
+   utils.Calc_Terminal()
 
-Wikipedia Search:
+ii. Wikipedia Search:
 
-utils.Wiki_Terminal()
+   utils.Wiki_Terminal()
 
 For a complete API reference, please see the full list of available functions in the API documentation.
 
 Support
+======
+
 For assistance, please contact Pheonix Studios at:
 
 Email: pheonix.community.mail@gmail.com
