@@ -547,6 +547,8 @@ To Find tutorials go to AkshobhyaEverything yt channel or PIdevz yt channel or P
 
 PHardwareITK, or Pheonix Hardware Interface Toolkit, is a comprehensive Python module developed by Pheonix Studios (AkshuDev/Akshobhya). This toolkit provides a variety of functions and utilities to assist developers in creating complex command-line applications, graphical user interfaces, system utilities, and more. With over 50 distinct functions and multiple specialized toolsets, PHardwareITK is designed to be versatile, modular, and cross-platform, ensuring compatibility with a wide range of development needs.
 
+For examples please visit -> [https://github.com/AkshuDev/PHardwareITK] and navigate to the Tests folder.
+
 ## Table of Contents ->
 1. Module Overview
 2. Key Features
@@ -568,7 +570,7 @@ The module includes a set of tools for both novice and experienced developers, i
 2. GUI Toolkit: A cross-platform framework for building custom graphical applications.
 3. ErrorSystem: A comprehensive error handling system.
 4. FileSystem: A set of utilities for interacting with various file formats and performing low-level file operations.
-5 HGame: A versatile game development framework that supports multiple rendering engines.
+5. HGame: A versatile game development framework that supports multiple rendering engines.
 
 ## Key Features
 
@@ -739,6 +741,8 @@ Text Output/Input with font and colors.
 
 The GUI Toolkit is a cross-platform toolkit that allows developers to create complex graphical user interfaces from scratch. It supports multiple UI frameworks including OpenGL, SDL2. The toolkit is fully customizable and provides advanced functionality for creating modern applications.
 
+It is under development and renderGUI.pyx has to be compiled by GCC/Clang and Cython. Instead for the time, use gui_sdl.py (phardwareitk.GUI.gui). The functions inside gui_sdl and renderGUI are supposed to make the process easy, but it is still under development. Hence, you can still use SDL and OpenGL functions to do whatever you want unlike PyQT5 and Tkinter. This toolkit provides all the functions in SDL2 and OpenGL.
+
 Key features:
 
 Full cross-platform support (Linux, Windows, macOS). \
@@ -770,7 +774,14 @@ Real-time usage statistics and logging.
 
 6. Extensions
    
-The Extensions folder provides enhanced versions of Python's built-in functions, adding more capabilities. For example, the printH function in the HyperOut.py file allows for advanced text printing with background and foreground colors, fonts, and other enhancements.
+The Extensions folder provides enhanced versions of Python's built-in functions, adding more capabilities. For example, the printH function in the HyperOut.py file allows for advanced text printing with background and foreground colors, fonts, and other enhancements. It also includes custom functions that make hard parts of programming easy like -> progressH that can create a progress bar in the terminal. It is highly flexible.
+
+NOTE: Mostly all terminal tasks even inside the phardwareitk are done using the cliToolKit.py (phardwareitk.CLI.cliToolKit).
+
+NOTE: phardwareitk.Extensions.HyperIn.inputH is a fully custom input function that doesn't use Python's input. Hence, some important factors are to NOTE -
+
+a. It is still Under Enhancements and if any bug occurs please provide a detailed explanation in [https://github/AkshuDev/PHardwareITK/Issues].
+b. It requires a time sleep to prevent CPU Hogging, the cpuHogging parameter in the function is defined to be 0.005 seconds or 5 milliseconds, you cannot go under 3 milliseconds or 0.003 seconds, as it is very dangerous for the CPU to do so.
 
 Key features:
 
@@ -791,6 +802,8 @@ High-level functions for file manipulation and data storage.
    
 HGame is an alternative to Pygame, providing a more flexible framework for game development. It supports multiple rendering backends, including PHardwareITK.GUI, Tkinter, OpenGL, and SDL2, making it highly cross-platform.
 
+NOTE: Not yet ready for use, just use GUI toolkit for the time.
+
 Key features:
 
 Multiple rendering backends. \
@@ -807,7 +820,15 @@ The LIB.py file contains a class called Paths, which provides access to file pat
 
 # Dependencies
 
-PHardwareITK is designed to run with only the Python standard library, ensuring compatibility across all systems without the need for external dependencies. However, in the case that any of the pre-installed modules are deleted or missing, the Dependencies.py file will help ensure that all necessary libraries are present.
+PHardwareITK is designed to run with mostly the Python standard library, ensuring compatibility across all systems with minimal need for external dependencies. However, in the case that any of the pre-installed modules are deleted or missing, the Dependencies.py file will help ensure that all necessary libraries are present.
+
+Required Dependencies ->
+
+1. PySDL2 (pip install pysdl2)
+2. PySDL2-DLL (pip install pysdl2-dll)
+3. PyOpenGL (pip install PyOpenGL)
+
+NOTE: All these are for the gui toolkit.
 
 # Contributing
 
