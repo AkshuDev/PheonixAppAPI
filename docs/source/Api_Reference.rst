@@ -198,7 +198,7 @@ This file provides Encryption and Decryption Related Methods.
 #### _AES_
 This class uses PyCryptodome for providing with tested security encryptions. This class uses AES (Advanced Encryption Standard).
 
-#### Methods: 
+##### Methods: 
  - **Encrypt()**
  - Encrypt the provided data.
  - **Arguments**:
@@ -221,10 +221,109 @@ This class uses PyCryptodome for providing with tested security encryptions. Thi
 This class provides all the AES modes that can be passes to the **_AES_** class.
 
 #### PTDMEDMU:
-(Pheonix Three Dimentional Mathematical Encryption / Decryption Method User) is a very very complex Encryption and Decryption Clas.
+(Pheonix Three Dimentional Mathematical Encryption / Decryption Method User) is a very very complex Encryption and Decryption Clas. This class encrypts each character 4 times placing it on one of the cells from one of the 6 grids. This is a hard to crack method.
 
-#### Methods:
- - **Encrypt()**
+NOTE: The decrypt function is not yet made for this class.
+NOTE: The available bytes for encryption are anywhere from 1 to 900.
+
+##### Methods:
+ - **new()**
+ - This function allows you to use the encrypt and decrypt methods.
+ - **Arguments**:
+    - `key` (Union[str, int, bytes]): The key to be used.
+    - `use_sys_info` (bool, optional): This defines wether to set/append the key with the sys-info of the computer. This is helpful when you want only a specific computer to decode the message. Defaults to False.
+    - `value` (Union[str, bytes, int], optional): This defines to value to be encrypted or decrypted. Defaults to ''.
+
+ - **Returns**:
+    - `tuple` [str, str]: The first value is the key and the second value is the output value. NOTE: Please use the output value as it is modified to match the len of the key.
+
+ - **adjust_ascii()**
+ - DO NOT USE DIRECTLY. PRIVATE FUNCTION
+
+ - **process_ascii()**
+ - DO NOT USE DIRECTLY. PRIVATE FUNCTION
+
+ - **encrypt()**
+ - This method encrypts the given value. NOTE: Please use the output value provided from the new method.
+ - **Arguments**:
+    - `key` (Union[str, int, bytes]): The key to use.
+    - `value` (Union[str, int, bytes]): The value to encrypt.
+ - **Returns**:
+    - `bytes`: The output encryption.
+
+#### PMEDMU
+This class stands for Pheonix Mathematical Encrypt/Decrypt Method User. This method uses large primes for doing encryption and decryption. It normally uses the MAC address of a computer but more keys can be added to it.
+
+##### Methods
+
+ - `generate_large_prime()`
+ - Generate a large prime number with the specified bit size.
+
+ - **Arguments**:
+    - `bits` (int): The bit size
+
+ - **Returns**:
+    - `int`: The output
+
+ - **new()**
+ - Generate a pair of large primes for encryption and decryption.
+
+ - **Arguments**:
+    - `bits` (int): The bit size.
+
+ - **Returns**:
+    - `int`: The output
+
+ - **encrypt()**
+ - Encrypt a message using large primes p and q.
+
+ - **Arguments**:
+    - `message` (Union[str, int, bytes]): The message to encrypt.
+    - `p` (int): Large prime 1.
+    - `q` (int): Large prime 2.
+
+ - **Raises**:
+    - `ValueError`: If the message is too long for the given primes.
+
+ - **Returns**:
+    - `bytes`: The output encrypted message
+
+ - **decrypt()**
+ - Decrypt a message using large primes p and q.
+
+ - **Args**:
+    - `encrypted_bytes` (int): The encrypted data in bytes (utf-16).
+    - `p` (int): Large prime 1.
+    - `q` (int): Large prime 2.
+
+ - **Returns**:
+    - `str`: The output.
+
+#### PTSEDM
+This class is used to encrypt or decrypt data using Pheonix Two Step Encrypt/Decrypt Method (PTSEDM). It normally uses the MAC address of a computer but more keys can be added to it.
+
+##### Methods
+
+ - **get_machine_identifier()**
+ - This function returns a unique identifier that is different in all machines (MAC)
+
+ - **Arguments**:
+    - `key` (str, optional): The key that will be used while encrypting and decrypting the data. The key and the computer should be same or else a error might occur. Defaults to str(nextprime(256)).
+    - `data` (Any, optional): The data here will be used to make a proper key bigger than the data.
+
+ - **Returns**:
+    - `bytes`: The output.
+
+ - **encrypt()**
+ - Encrypt data using a machine-specific identifier.
+
+ - **Arguments**:
+    - `data` (bytes): The data to encrypt.
+    - `flag` (str, optional): Flags to encrypt/decrypt. Available Are ->
+        - 1. `decrypt`: Means instead of rerunning the program and getting wrong data some decodes are made to the data so that rerunning the program will just result in the orignal data.
+    - `key` (str, optional): The key that will be used to encrypt the data. Even if the key is right the computer should be having the correct mac address to decrypt. Defaults to str(nextprime(256)).
+ - **Returns**:
+    - `bytes`: The encrypted data.
 
 Examples
 --------
