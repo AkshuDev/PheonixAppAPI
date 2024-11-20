@@ -413,6 +413,7 @@ The `apis.PACI` module provides a robust API for managing and installing Pheonix
     **Example:**
 
     .. code-block:: python
+
        access_data = PACI.ReadAccessFile("my_module")
        print(access_data)
 
@@ -422,6 +423,7 @@ The `apis.PACI` module provides a robust API for managing and installing Pheonix
     **Example:**
 
     .. code-block:: python
+
        module_path = PACI.ReturnModulePath("my_module")
        print(module_path)
 
@@ -431,6 +433,7 @@ The `apis.PACI` module provides a robust API for managing and installing Pheonix
     **Example:**
 
     .. code-block:: python
+
        PACI.MakeAccessFile("my_module", "1.0.0")
 
 * **InstallPheonixModule(module_name:str, module_version:str="latest", log:bool=False) -> None:**
@@ -439,6 +442,7 @@ The `apis.PACI` module provides a robust API for managing and installing Pheonix
     **Example:**
 
     .. code-block:: python
+
        PACI.InstallPheonixModule("pcd_py", "latest", log=True)
 
 **Note:** The module leverages the `PheonixJson` and `PheonixExceptions` modules for JSON handling and error management, respectively.
