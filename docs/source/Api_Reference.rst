@@ -447,4 +447,65 @@ The `apis.PACI` module provides a robust API for managing and installing Pheonix
 
 **Note:** The module leverages the `PheonixJson` and `PheonixExceptions` modules for JSON handling and error management, respectively.
 
+### Apis folders
+
+**Description**: The folders included in 'apis'.
+
+#### Modules
+
+**Description**: This folder includes various Pre-Installed Pheonix Studios modules and also the ones that are connected by the user.
+
+##### Pre
+
+**Description**: This folder includes all the Pre-Installed Modules like:
+
+- **PheonixExceptions**: Just a simple module for Pheonix-Related Exceptions
+- **PheonixJSON**: Very Very basic JSON Handler, and includes Psaaf (Pheonix Studios Access File), used in various functions from PACI file in APIs
+
+- **PheonixCipherTools**: Just a resource Module
+- **phardwareitk**: Pheonix Hardware Interface Toolkit is a published module, this can be used for various tasks and is very very complex, hence it is defined in the next section labeled as PHardwareITK.
+
+##### lib
+
+**Description**: This folder will include all the user connected modules.
+
+PHardwareITK
+------------
+
+**Description:**
+
+The `PHardwareITK` library provides a comprehensive toolkit for interacting with hardware components and functionalities. It offers functionalities for various hardware-related tasks, including:
+
+* Error handling and system management
+* File system operations
+* Graphical User Interface (GUI) development
+* Hardware control and interaction (details to be filled based on available functionalities)
+* Module management and control
+* Low-level programming aspects (details to be filled based on available functionalities)
+
+# Files
+
+**Description**: The files directly available in the phardwareitk module.
+
+## LIB
+**Internal Paths:**
+
+The `phardwareitk.LIB` module establishes various file paths within the library structure. These paths are used to access sub-modules and functionalities.
+
+**Classes:**
+
+**1. Paths:**
+
+This class provides pre-defined paths to various directories and files within the `PHardwareITK` library. It avoids the need for manually constructing paths throughout the codebase.
+
+**Example:**
+
+    .. code-block:: python
+
+      import phardwareitk.LIB as phLIB
+   
+      # Access the path to the ErrorSystem directory
+      error_system_path = phLIB.Paths.ErrorSystem
+   
+      print(error_system_path)  # Output: /path/to/phardwareitk/ErrorSystem
 ---
