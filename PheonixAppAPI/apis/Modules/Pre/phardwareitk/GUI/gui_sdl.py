@@ -125,11 +125,11 @@ def LoadHIcon(icon:PIcon, Title:Optional[str]=None) -> Any:
     if Windows:
         import ctypes
 
-        kernel32 = ctypes.windll.kernel32
+        user32 = ctypes.windll.user32
 
         hwnd = GetHwnd(Title)
 
-        return kernel32.LoadImageW(None, icon.iconPath, 1, 0, 0, 0x10)
+        return user32.LoadImageW(None, icon.iconPath, ctypes.c_int(1), 0, 0, ctypes.c_int(0x0003))
     else:
         if PError:
             HyperOut.printH("Not Windows OS!", FontEnabled=True, Flush=True, TextFont=TextFont(font_color=Color("red")))
@@ -197,7 +197,11 @@ def AddIcon(window:Any, icon:PIcon, taskbarIncluded:bool=True, Title: Optional[s
         taskbarIncluded (bool, optional): If True, depending on Os, the taskbar window icon will change from python to the specified icon with the icon on the window. Defaults to True.
         Title (Optional[str], optional): The title of the window, If 'None' the title of the latest window will be used. Defaults to None.
     """
-    icon.SetIconSDL2(window)
+
+    global taskbarWindowedIds
+
+    if not taskbarIncluded:
+        icon.SetIconSDL2(window)
 
     if not Title:
         Title = title
@@ -209,8 +213,11 @@ def AddIcon(window:Any, icon:PIcon, taskbarIncluded:bool=True, Title: Optional[s
             hIcon = LoadHIcon(icon, Title)
 
             user32 = ctypes.windll.user32
-            user32.SendMessageW(hwnd, WM_SETICON, ICON_SMALL, hIcon)
-            user32.SendMessageW(hwnd, WM_SETICON, ICON_BIG, hIcon)
+
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(title+"x64.phardwareitk.pheonixappapi.PheonixStudios"+len(taskbarWindowedIds))
+            user32.SendMessageW(hwnd, ctypes.c_int(WM_SETICON), ctypes.c_int(ICON_SMALL), hIcon)
+        else:
+            icon.SetIconSDL2(window)
 
 def WindowSurface(window:Any) -> Any:
     """Returns the SDL2 window surface.
@@ -1115,4 +1122,3 @@ class AdvQuadrilateral(PWidget):
             SDL_Renderer: The renderer of the shape.
         """
         return Shape(((self.p1, self.p1w), (self.p2, self.p2w), (self.p3, self.p3w), (self.p4, self.p4w)), self.x, self.y, self.wireframe, self.bgcolor, self.color).Draw(renderer)
-
