@@ -136,7 +136,7 @@ This module is one ofthe biggest in the entire PHardwareITK, as it contains over
 
 **1. SysUsage**
 
-This file has 200+ functions for monitoring the system usage, **NOTE: Some functions are OS-exclusive due to Python limitations.**
+This file has 50+ functions for monitoring the system usage, **NOTE: Some functions are OS-exclusive due to Python limitations.**
 
 
 **Classes:**
@@ -359,3 +359,18 @@ This class is a bundle for all functions. Not supported functions of other OS ar
       
       # Replace 'eth0' with your actual interface name
       print("Netmask of eth0: ", SysUsage.System.Netmask('eth0'))
+
+FileSystem
+----------
+
+This module offers 50+ functions for managing files. Same as the **SysUsage**, only classes will be documentated.
+
+**Files:**
+
+**1. FileSystem**
+
+This is the main file.
+
+**Classes:**
+
+**1. BasicFileSystem**
