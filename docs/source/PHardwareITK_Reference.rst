@@ -557,7 +557,7 @@ Get the current cursor position using BLOCKING. (row(y), column(x)).
 
 | **Example:**
 
-   ..code-block:: python
+   .. code-block:: python
 
       from phardwareitk.CLI.cliToolKit import Cursor
 
