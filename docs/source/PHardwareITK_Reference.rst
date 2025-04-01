@@ -62,13 +62,13 @@ Files
 LIB
 ---
 
-**Internal Paths:**
+| **Internal Paths:**
 
 The `phardwareitk.LIB` module establishes various file paths within the library structure. These paths are used to access sub-modules and functionalities.
 
-**Classes:**
+| **Classes:**
 
-**1. Paths:**
+| **1. Paths:**
 
 This class provides pre-defined paths to various directories and files within the `PHardwareITK` library. It avoids the need for manually constructing paths throughout the codebase.
 
@@ -86,18 +86,18 @@ This class provides pre-defined paths to various directories and files within th
 Dependenicies
 -------------
 
-**All requirement modules:**
+| **All requirement modules:**
 The `phardwareitk.Dependencies` module allows users to download any required module that is used in Phardwareitk as per their need.
 
-**Classes:**
+| **Classes:**
 
-**1. Requirements:**
+| **1. Requirements:**
 
 This class is the one and only main class of this file.
 
-**Functions:**
+| **Functions:**
 
-**1. Modules:**
+| **1. Modules:**
 
 This function is the main function of this class.
 
@@ -132,9 +132,9 @@ System
 
 This module is one ofthe biggest in the entire PHardwareITK, as it contains over 200 functions over multiple platforms, so we will just look at the classes and some example, look at [https://github.com/AkshuDev/PHardwareITK] Test folder for more examples.
 
-**Files:**
+| **Files:**
 
-**1. SysUsage**
+| **1. SysUsage**
 
 This file has 50+ functions for monitoring the system usage, **NOTE: Some functions are OS-exclusive due to Python limitations.**
 
@@ -156,7 +156,7 @@ This class handles all CPU related montitoring.
       # Check github for more details
 
 
-**2. Battery**
+| **2. Battery**
 
 This class handles all Battery related montitoring.
 
@@ -170,7 +170,7 @@ This class handles all Battery related montitoring.
       # Check github for more details
 
 
-**3. Temperature**
+| **3. Temperature**
 
 This class handles all Temperature related montitoring. LINUX ONLY.
 
@@ -184,7 +184,7 @@ This class handles all Temperature related montitoring. LINUX ONLY.
       # Check github for more details
 
 
-**4. Disk**
+| **4. Disk**
 
 This class handles all Disk related montitoring.
 
@@ -198,7 +198,7 @@ This class handles all Disk related montitoring.
       # Check github for more details
 
 
-**5. Memory**
+| **5. Memory**
 
 This class handles all Memory related montitoring.
 
@@ -212,7 +212,7 @@ This class handles all Memory related montitoring.
       # Check github for more details
 
 
-**6. Fan**
+| **6. Fan**
 
 This class handles all Fan related montitoring. LINUX ONLY
 
@@ -226,7 +226,7 @@ This class handles all Fan related montitoring. LINUX ONLY
       # Check github for more details
 
 
-**7. Network**
+| **7. Network**
 
 This class handles all Network related montitoring.
 
@@ -240,9 +240,9 @@ This class handles all Network related montitoring.
       # Check github for more details
 
 
-**8. System**
+| **8. System**
 
-This class is a bundle for all functions. Not supported functions of other OS are not shown, so Dont Worry! Same with Classes!
+This class is a bundle for all functions. Not supported functions of other OS are not shown in IDE like VSCode, so Dont Worry! Same with Classes!
 
    .. code-block:: python
 
@@ -365,12 +365,277 @@ FileSystem
 
 This module offers 50+ functions for managing files. Same as the **SysUsage**, only classes will be documentated.
 
-**Files:**
+| **Files:**
 
-**1. FileSystem**
+| **1. FileSystem**
 
 This is the main file.
 
-**Classes:**
+| **Classes:**
 
-**1. BasicFileSystem**
+| **1. BasicFileSystem**
+
+This class handles files on a basic level, providing functions to create/move/rename/delete files and more.
+
+   .. code-block:: python
+
+      from phardwareitk.FileSystem.FileSystem import BasicFileSystem
+
+      # Create a file
+      myfile = BasicFileSystem.CreateFile(".\\MyFile.txt", "Hello, This is a test!")
+
+| **2. JsonFileSystem**
+
+This class is like **BasicFileSystem** class, but this class specializes in working with JSON files. 
+
+   .. code-block:: python
+
+      from phardwareitk.FileSystem.FileSystem import JsonFileSystem
+
+      # Create a file
+      myjson = JsonFileSystem.GetFileKeys(".\\MyFile.json")
+      # Print
+      print(myjson)
+
+| **3. LowFileSystem**
+
+This class specializes in working with low-level files. In other words, executable, assembly, C, C++, etc files.
+
+NOTE: For using majority of the functions in this class, please install GCC, LD, and NASM (Mingw64 or Msys2 UCRT64).
+    If you cannot install it. Please use PLTEC via Command Line Interface to convert any language syntax defined in a json file to Assembly or even Object (Undergoing development). But before making such a file please understand the file's syntax. Read through the DOCS for PLTEC (Under Development) (Recieves Low Updates, due to less used part of module).
+
+   .. code-block:: python
+
+      from phardwareitk.FileSystem.FileSystem import LowFileSystem
+
+      # Create a file
+      myobj = LowFileSystem.CompileAsmToObject(".\\MyFile.asm")
+
+| **4. FileSystem**
+
+This class is just a class that supportes and includes, all functions from all classes in this file.
+
+   .. code-block:: python
+
+      from phardwareitk.FileSystem.FileSystem import FileSystem
+
+      # Create a file
+      myobj = FileSystem.CompileAsmToObject(".\\MyFile.asm")
+      # Create a normal file
+      myfile = FileSystem.CreateFile(".\\Myfile.txt")
+
+CLI
+---
+
+This module, is specialized to work with the Command Line Interface. This module allows python users to develop Command Line Apps in no time. This module includes classes for working with Text -> Updating Text, Progress Bars, etc. Mouse -> Mouse Pos, Update Mouse, etc. And a lot more
+
+| **cliToolKit:**
+
+This is the main file for this module.
+
+| **Classes:**
+
+The classes in this module are ->
+
+| **Cursor**
+
+This class handles all cursor and mouse operations.
+
+| **Functions ->**
+
+The functions in this class.
+
+| **1. MoveCursorX**
+
+Moves the cursor to the specified X postion.
+
+        Args:
+            x (int): X coordinate.
+
+| **2. MoveCursor**
+
+Moves the cursor to specified position.
+
+        Args:
+            x (int): The X coordinate.
+            y (int): the Y coordinate.
+
+| **3. HideCursor**
+
+Hides the cursor.
+
+| **4. ShowCursor**
+
+Shows the cursor.
+
+| **5. MoveCursorUp**
+
+Move cursor up by **n** lines.
+
+   Args:
+      n (int): The number of lines.
+
+| **6. MoveCursorDown**
+
+Move cursor down by **n** lines.
+
+   Args:
+      n (int): The number of lines.
+
+| **7. MoveCursorRight**
+
+Move cursor right by **n** lines.
+
+   Args:
+      n (int): The number of lines.
+
+| **8. MoveCursorLeft**
+
+Move cursor left by **n** lines.
+
+   Args:
+      n (int): The number of lines.
+
+| **9. SaveCursorPosition**
+
+Saves the current cursor position.
+
+| **10. RestoreCursorPosition**
+
+Restores the saved cursor position.
+
+| **11. SetCursorToBeginningOfLine**
+
+Moves the cursor to the beginning of the current line.
+
+| **12. SetCursorToEndOfLine**
+
+Moves the cursor to the end of the current line.
+
+| **13. HideCursorTemporarily**
+
+Temporarily hides the cursor (until next action).
+
+| **14. ShowCursorTemporarily**
+
+Temporarily shows the cursor again after it was hidden.
+
+| **15. SetCursorPositionToHome**
+
+Sets the cursor to the top left corner (1, 1).
+
+| **16. SetCursorPositionToEnd**
+
+Sets the cursor to the bottom right corner of the terminal.
+
+| **17. MoveToNextWord**
+
+Moves the cursor to the next word.
+
+| **18. MoveToPreviousWord**
+
+Moves the cursor to the previous word.
+
+| **19. MoveCursorToTop**
+
+Moves the cursor to the top of the terminal.
+
+| **20. MoveCursorToBottom**
+
+Moves the cursor to the bottom of the terminal.
+
+| **21. SetCursorVisibility**
+
+Set the cursor visibility.
+
+   Args:
+      is_visible (bool): True for Yes, and False for No.
+
+| **22. CurrentCursorPosition**
+
+Get the current cursor position using BLOCKING. (row(y), column(x)).
+
+| **Example:**
+
+   ..code-block:: python
+
+      from phardwareitk.CLI.cliToolKit import Cursor
+
+      # Set Cursor Pos to Home
+      Cursor.SetCursorPositionToHome()
+
+      # Move To Next Line
+      Cursor.MoveCursorDown(1)
+
+| **Screen**
+
+Handles All Screen Related Operations in the Terminal
+
+| **Functions ->**
+
+The functions in this class
+
+| **1. ClearCurrentLine**
+
+Clears the current line.
+
+| **2. ClearLine**
+
+Clears the specified line.
+
+   Args:
+      y (int): The line number.
+
+| **3. ClearScreen**
+
+Clears the entire screen.
+
+| **4. ClearScreenFromCursorDown**
+
+Clears the screen from the cursor's current position to the bottom.
+
+| **5. ClearScreenFromCursorUp**
+
+Clears the screen from the cursor's current position to the top.
+
+| **6. SetScreenBackgroundColor**
+
+Sets the background color of the terminal.
+
+   Args:
+      color (str): The color name
+
+| **7. SetScreenForegroundColor**
+
+Sets the foreground color of the terminal.
+
+   Args:
+      color (str): The color name
+
+| **8. SetScreenColorReset**
+
+Resets the screen's colors to default.
+
+| **9. HideScreenCursor**
+
+Hides the terminal cursor.
+
+| **10. ShowScreenCursor**
+
+Shows the terminal cursor.
+
+| **11. GetTerminalSize**
+
+Gets the current terminal size (rows, columns).
+
+| **12. SetTerminalSize**
+
+Sets the terminal size.
+
+   Args:
+      rows (int): The number of rows to set.
+      columns (int): The number of columns to set.
+
+| **13. EnableAlternateScreenBuffer**
+
+Enables the alternate screen buffer.
