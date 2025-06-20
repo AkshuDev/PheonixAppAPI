@@ -26,6 +26,8 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import socket
 
+from . import *
+
 class Server_Serve(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':

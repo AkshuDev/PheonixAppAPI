@@ -29,6 +29,8 @@ import json
 import os
 import sys
 
+from . import *
+
 mainDir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 if __name__ == "__main__":

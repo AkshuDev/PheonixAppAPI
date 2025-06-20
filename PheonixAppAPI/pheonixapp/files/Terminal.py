@@ -29,6 +29,10 @@ import time as TimeModule
 from datetime import datetime
 import requests
 
+from . import *
+
+import certs
+
 mainDir = os.path.dirname(os.path.abspath(__file__))
 
 if __name__ == "__main__":
@@ -121,9 +125,9 @@ class TCmds():
                                 cp, isc = PSSbridge.PATFbridge().getCertificatePath(PSSUltraCode)
 
                                 if isc:
-                                    response = requests.get(quote_url, verify=cp)
+                                    response = requests.get(quote_url, verify=CA_BUNDLE_PATH)
                                 else:
-                                    response = requests.get(quote_url, verify=False)
+                                    response = requests.get(quote_url, verify=CA_BUNDLE_PATH) # Removed cp to fix security issues
 
                                 if response.status_code == 200:
                                     quote_data = response.json()
@@ -283,3 +287,10 @@ class HaCline():
 
     def run(self):
         pass
+
+if __name__ == "__main__":
+	while True:
+		cmd = input("$: ")
+		if cmd.lower() == "$exitparent":
+			break
+		Tcmds(cmd).run()
