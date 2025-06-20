@@ -105,9 +105,9 @@ class TCmds():
                                 cp, isc = PSSbridge.PATFbridge().getCertificatePath(PSSUltraCode)
 
                                 if isc:
-                                    response = requests.get(uselessF_url, verify=cp)
+                                    response = requests.get(uselessF_url, verify=True) # We are not using cp now to fix some security issues.
                                 else:
-                                    response = requests.get(uselessF_url, verify=False)
+                                    response = requests.get(uselessF_url, verify=True)
 
                                 if response.status_code == 200:
                                     fact_data = response.json()
