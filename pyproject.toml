@@ -4,11 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PheonixAppAPI"
-version = "0.2.7.1"
+version = "0.2.7.2"
 authors = [
-  { name="Pheonix Studios", email="pheonix.community.mail@gmail.com" },
-  { name="Akshobhya Sasun", email="akshobhyasasun@gmail.com" },
-  { name="Aarav Nayak", email="legoheroaarav@gmail.com" }
+  { name="Pheonix Studios", email="PheonixStudiosInfo@gmail.com" },
+  { name="Akshobhya Sasun", email="akshobhyasasun@gmail.com" }
 ]
 description = "Pheonix App 1.0 is a powerful Python application designed to streamline various tasks, from managing files to playing mini-games. This module is a API for this APP. NOTE: updates will come for the app. For Showcases view AkshobhyaEverything channel or the Pheonix Studios Developer channel"
 readme = "README.md"
