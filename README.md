@@ -1,5 +1,7 @@
 # Pheonix App 1.0
 
+[![PyPI Downloads](https://static.pepy.tech/badge/pheonixappapi)](https://pepy.tech/projects/pheonixappapi)
+
 
 ## Overview
 
