@@ -12,7 +12,7 @@ Reporting a Vulnerability
 If you discover a security vulnerability within our project, we encourage you to report it responsibly. Here's how you can do that:
 
 How to Report
-Email: Please send an email to pheonix.community.mail@gmail.com with the subject line "Vulnerability Report: PheonixAppAPI".
+Email: Please send an email to pheonixstudiosmail@gmail.com with the subject line "Vulnerability Report: PheonixAppAPI".
 
 Details: Include as much detail as possible about the vulnerability. This should include steps to reproduce the issue, the impact, and any potential solutions you might have in mind.
 
