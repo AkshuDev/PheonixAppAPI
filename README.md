@@ -1,7 +1,8 @@
 # Pheonix App 1.0
 
 [![PyPI Downloads](https://static.pepy.tech/badge/pheonixappapi)](https://pepy.tech/projects/pheonixappapi)
-
+[![PyPI Downloads](https://static.pepy.tech/badge/pheonixappapi/month)](https://pepy.tech/projects/pheonixappapi)
+[![PyPI Downloads](https://static.pepy.tech/badge/pheonixappapi/week)](https://pepy.tech/projects/pheonixappapi)
 
 ## Overview
 
